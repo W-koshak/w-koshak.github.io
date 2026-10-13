@@ -1,0 +1,16 @@
+{
+  "name": "BabyReady — تجهيز أول مولود",
+  "short_name": "BabyReady",
+  "description": "قائمة تجهيز المولود والميزانية والمشتريات. بياناتك الشخصية تبقى محليًا على جهازك.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f7f7",
+  "theme_color": "#0a7c72",
+  "orientation": "portrait-primary",
+  "icons": [
+    {"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
