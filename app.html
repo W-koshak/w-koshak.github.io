@@ -14,7 +14,7 @@
 <link rel="manifest" href="./manifest.webmanifest" />
 <link rel="apple-touch-icon" href="./icon.svg" />
 <link rel="icon" type="image/png" sizes="192x192" href="./icon.svg" />
-<title>BabyReady V3.2 — تجهيز أول مولود</title>
+<title>BabyReady V3.3 — تجهيز أول مولود</title>
 <style>
 :root{
   --bg:#f4f7f7;--card:#fff;--card2:#f9fbfb;--ink:#132326;--muted:#6b7c80;--line:#e3ebec;
@@ -70,7 +70,7 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}.container{width
 .alt-grid textarea{min-height:55px;resize:vertical}
 .alt-actions{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
 .alt-actions button{border:0;border-radius:10px;padding:7px 9px;font-size:9px;font-weight:850}
-.alt-choose{background:var(--primary);color:#fff}.alt-open{background:var(--soft);color:var(--primary2)}.alt-delete{background:transparent!important;color:var(--danger)}
+.alt-choose{background:var(--primary);color:#fff}.alt-open{background:var(--soft);color:var(--primary2)}.alt-delete{background:#fff0ee!important;color:var(--danger);border:1px solid rgba(186,46,39,.18)!important}
 .options-tip{margin-top:8px;color:var(--muted);font-size:9px;line-height:1.6}
 .selected-summary{margin:9px 0 12px;background:#e8f7ee;color:#155f3b;border-radius:13px;padding:9px 10px;font-size:10px}
 [data-theme="dark"] .selected-summary{background:#143124;color:#8de3b6}
@@ -80,7 +80,7 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}.container{width
 </head>
 <body>
 <header class="topbar"><div class="container topbar-inner">
-  <div class="brand"><div class="app-icon">🍼</div><div><h1>BabyReady <span style="font-size:9px;color:var(--primary)">V3.2</span></h1><small id="brandSub">تجهيز أول مولود</small></div></div>
+  <div class="brand"><div class="app-icon">🍼</div><div><h1>BabyReady <span style="font-size:9px;color:var(--primary)">V3.3</span></h1><small id="brandSub">تجهيز أول مولود</small></div></div>
   <div class="top-actions"><button class="icon-btn" id="themeBtn" aria-label="الوضع الليلي">◐</button><button class="icon-btn" id="helpBtn" aria-label="المساعدة">?</button></div>
 </div></header>
 
@@ -143,7 +143,7 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}.container{width
   <div class="settings"><div class="action-grid"><button class="action primary" id="exportBtn">⬇︎ نسخة احتياطية كاملة</button><button class="action" id="importBtn">⬆︎ استعادة نسخة</button><button class="action" id="csvBtn">▦ تصدير CSV</button><button class="action" id="printBtn">⎙ طباعة / PDF</button><button class="action" id="expandBtn">⌄ فتح كل الأقسام</button><button class="action danger" id="resetBtn">⌫ مسح هذا الجهاز</button></div><input id="importFile" type="file" accept="application/json,.json" hidden /><div class="privacy">🔐 يحتفظ التطبيق بنسخة محلية على الجهاز. عند تشغيل المزامنة المشتركة، تُحفظ نسخة مشتركة في Google Sheet الخاص بك وتُستخدم لمزامنة الأجهزة المصرح لها فقط.</div></div>
   <div class="section-title"><h3>أفضل استخدام على الآيفون</h3><span>Safari + الشاشة الرئيسية</span></div>
   <div class="settings"><div style="font-size:11px;color:var(--muted);line-height:1.85">افتح BabyReady من Safari، ثم مشاركة ⬆︎ → إضافة إلى الشاشة الرئيسية. بعدها يفتح كتطبيق مستقل. لا تحتاج Textastic. عند وجود اتصال بالإنترنت تتم المزامنة المشتركة، وتبقى نسخة محلية للاستخدام السريع.</div></div>
-  <div class="version">BabyReady V3.2 • Shared Family Sync • Google Sheet خاص</div>
+  <div class="version">BabyReady V3.3 • Shared Family Sync • Flow Verified</div>
 </section>
 </main>
 
@@ -157,7 +157,7 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}.container{width
 
 <div class="modal-wrap" id="itemModal"><div class="modal"><div class="handle"></div><h3>إضافة بند جديد</h3><div class="form-grid">
 <div class="field full"><label>اسم البند</label><input id="newName" placeholder="مثال: غطاء عربة" /></div><div class="field"><label>القسم</label><select id="newCat"></select></div><div class="field"><label>الأهمية</label><select id="newPriority"><option value="essential">أساسي</option><option value="recommended">مهم</option><option value="optional">اختياري</option></select></div><div class="field"><label>الكمية</label><input id="newQty" type="number" min="1" value="1" /></div><div class="field"><label>الوحدة</label><input id="newUnit" value="قطعة" /></div><div class="field full"><label>ملاحظة</label><textarea id="newNote"></textarea></div></div><div class="modal-actions"><button class="save" id="saveNew">إضافة</button><button class="cancel" id="cancelNew">إلغاء</button></div></div></div>
-<div class="modal-wrap" id="helpModal"><div class="modal"><div class="handle"></div><h3>BabyReady V3.2</h3><div style="font-size:12px;color:var(--muted);line-height:1.9">القائمة تدعم الآن عدة خيارات لكل غرض: أضف 3 أو 4 منتجات للسرير أو العربة أو أي بند، قارنها واختر النهائي لاحقًا. كذلك تدعم حالات شراء <b>مطلوب / تم الطلب / تم الاستلام</b>، مفضلة، صور منتجات، روابط شراء، سعر وميزانية، موعد شراء، فرز بالأولوية والتاريخ، لوحة رئيسية، ونسخة احتياطية تشمل الصور. كل التغييرات تحفظ محليًا، ويمكن ربط التطبيق بملف Google Sheet خاص لمزامنتها بين أجهزتك والأشخاص الذين تمنحهم رمز العائلة.</div><div class="modal-actions"><button class="save" id="closeHelp">تمام</button></div></div></div>
+<div class="modal-wrap" id="helpModal"><div class="modal"><div class="handle"></div><h3>BabyReady V3.3</h3><div style="font-size:12px;color:var(--muted);line-height:1.9">القائمة تدعم الآن عدة خيارات لكل غرض: أضف 3 أو 4 منتجات للسرير أو العربة أو أي بند، قارنها واختر النهائي لاحقًا. كذلك تدعم حالات شراء <b>مطلوب / تم الطلب / تم الاستلام</b>، مفضلة، صور منتجات، روابط شراء، سعر وميزانية، موعد شراء، فرز بالأولوية والتاريخ، لوحة رئيسية، ونسخة احتياطية تشمل الصور. كل التغييرات تحفظ محليًا، ويمكن ربط التطبيق بملف Google Sheet خاص لمزامنتها بين أجهزتك والأشخاص الذين تمنحهم رمز العائلة.</div><div class="modal-actions"><button class="save" id="closeHelp">تمام</button></div></div></div>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -208,8 +208,8 @@ function fillSyncFields(){const u=document.getElementById('syncUrl'),c=document.
 function updateSyncStatus(mode,msg){const dot=document.getElementById('syncDot'),t=document.getElementById('syncTitle'),s=document.getElementById('syncSub'),r=document.getElementById('syncRev');if(!dot||!t||!s||!r)return;dot.className='sync-dot'+(mode?' '+mode:'');if(msg){t.textContent=msg}else if(syncBusy){dot.className='sync-dot busy';t.textContent='جاري المزامنة…'}else if(syncCfg.connected){dot.className='sync-dot on';t.textContent=syncCfg.dirty?'متصل • تحديث بانتظار الإرسال':'متصل ومشترك'}else{t.textContent='غير متصل'}s.textContent=syncCfg.lastSync?('آخر مزامنة: '+new Date(syncCfg.lastSync).toLocaleString('ar-SA')):(syncCfg.connected?'بانتظار أول مزامنة.':'البيانات محفوظة محليًا على هذا الجهاز.');r.textContent=syncCfg.revision?('Rev '+syncCfg.revision):'—'}
 function normalizeSyncUrl(u){u=String(u||'').trim();if(!/^https:\/\/script\.google\.com\/macros\/s\/.+\/exec(?:\?.*)?$/i.test(u))return '';return u.split('?')[0]}
 function jsonpSync(params,timeout=15000){return new Promise((resolve,reject)=>{if(!syncCfg.url)return reject(new Error('missing_url'));const cb='__brcb_'+Date.now()+'_'+Math.random().toString(36).slice(2);const q=new URLSearchParams({...params,callback:cb});const sc=document.createElement('script');let done=false;const clean=()=>{if(done)return;done=true;try{delete window[cb]}catch(e){};sc.remove()};const tm=setTimeout(()=>{clean();reject(new Error('timeout'))},timeout);window[cb]=data=>{clearTimeout(tm);clean();resolve(data)};sc.onerror=()=>{clearTimeout(tm);clean();reject(new Error('network'))};sc.src=syncCfg.url+'?'+q.toString();document.head.appendChild(sc)})}
-async function syncPull(manual=false){if(syncBusy||!syncCfg.url||!syncCfg.code)return;if(manual&&syncCfg.dirty){toast('يوجد تحديث محلي؛ سأرسله أولًا لحمايته.');await syncPush('pre_pull',true);return}syncBusy=true;let needsInitialPush=false;updateSyncStatus('busy','جاري جلب التحديثات…');try{const d=await jsonpSync({action:'read',code:syncCfg.code,deviceId:syncCfg.deviceId,deviceName:syncCfg.deviceName,clientVersion:'3.2'});if(!d||!d.ok){syncCfg.connected=false;saveSyncConfig();updateSyncStatus('err',d&&d.error==='unauthorized'?'رمز العائلة غير صحيح':'تعذر الاتصال');return}syncCfg.connected=true;const remoteRev=Number(d.revision||0);if(d.payload){if(remoteRev>Number(syncCfg.revision||0)||manual){const pack=JSON.parse(d.payload);if(pack&&pack.state){syncApplyingRemote=true;state={...defaults(),...pack.state,profile:{...defaults().profile,...(pack.state.profile||{})},meta:{...defaults().meta,...(pack.state.meta||{})}};state.version=3;await restoreImages(pack.images||{});try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}syncApplyingRemote=false;bindProfile();renderCurrent();updateAll()}}}else if(remoteRev===0){needsInitialPush=true}if(syncCfg.pendingPushBase!==undefined&&syncCfg.pendingPushBase!==null&&remoteRev>Number(syncCfg.pendingPushBase)){syncCfg.dirty=false;delete syncCfg.pendingPushBase;delete syncCfg.pendingPushAt}syncCfg.revision=remoteRev;syncCfg.lastSync=new Date().toISOString();saveSyncConfig();updateSyncStatus('on','متصل ومشترك')}catch(err){syncCfg.connected=false;saveSyncConfig();updateSyncStatus('err','تعذر الوصول للمزامنة')}finally{syncBusy=false;updateSyncStatus()}if(needsInitialPush){syncCfg.dirty=true;saveSyncConfig();await syncPush('initial_upload',true)}}
-async function syncPush(actionName='update',force=false){if(syncBusy||!syncCfg.url||!syncCfg.code)return;if(!force&&!syncCfg.dirty)return;syncBusy=true;updateSyncStatus('busy','جاري إرسال التحديث…');try{const images=await getAllImages();const payload=JSON.stringify({state,images});if(payload.length>22000000){syncBusy=false;updateSyncStatus('err','النسخة المشتركة كبيرة جدًا');toast('احذف بعض الصور المحلية أو استخدم روابط صور.');return}let frame=document.getElementById('brSyncFrame');if(!frame){frame=document.createElement('iframe');frame.id='brSyncFrame';frame.name='brSyncFrame';frame.style.display='none';document.body.appendChild(frame)}const form=document.createElement('form');form.method='POST';form.action=syncCfg.url;form.target='brSyncFrame';form.style.display='none';const fields={action:'write',code:syncCfg.code,deviceId:syncCfg.deviceId,deviceName:syncCfg.deviceName,clientVersion:'3.2',actionName,payload};Object.entries(fields).forEach(([k,v])=>{const i=document.createElement('input');i.type='hidden';i.name=k;i.value=String(v??'');form.appendChild(i)});document.body.appendChild(form);syncCfg.pendingPushBase=Number(syncCfg.revision||0);syncCfg.pendingPushAt=Date.now();syncCfg.connected=true;saveSyncConfig();form.submit();setTimeout(()=>form.remove(),1000);setTimeout(()=>{syncBusy=false;syncPull(false)},2200)}catch(err){syncCfg.connected=false;syncCfg.dirty=true;saveSyncConfig();syncBusy=false;updateSyncStatus('err','فشل إرسال التحديث')}}
+async function syncPull(manual=false){if(syncBusy||!syncCfg.url||!syncCfg.code)return;if(manual&&syncCfg.dirty){toast('يوجد تحديث محلي؛ سأرسله أولًا لحمايته.');await syncPush('pre_pull',true);return}syncBusy=true;let needsInitialPush=false;updateSyncStatus('busy','جاري جلب التحديثات…');try{const d=await jsonpSync({action:'read',code:syncCfg.code,deviceId:syncCfg.deviceId,deviceName:syncCfg.deviceName,clientVersion:'3.3'});if(!d||!d.ok){syncCfg.connected=false;saveSyncConfig();updateSyncStatus('err',d&&d.error==='unauthorized'?'رمز العائلة غير صحيح':'تعذر الاتصال');return}syncCfg.connected=true;const remoteRev=Number(d.revision||0);if(d.payload){if(remoteRev>Number(syncCfg.revision||0)||manual){const pack=JSON.parse(d.payload);if(pack&&pack.state){syncApplyingRemote=true;state={...defaults(),...pack.state,profile:{...defaults().profile,...(pack.state.profile||{})},meta:{...defaults().meta,...(pack.state.meta||{})}};state.version=3;await restoreImages(pack.images||{});try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}syncApplyingRemote=false;bindProfile();renderCurrent();updateAll()}}}else if(remoteRev===0){needsInitialPush=true}if(syncCfg.pendingPushBase!==undefined&&syncCfg.pendingPushBase!==null&&remoteRev>Number(syncCfg.pendingPushBase)){syncCfg.dirty=false;delete syncCfg.pendingPushBase;delete syncCfg.pendingPushAt}syncCfg.revision=remoteRev;syncCfg.lastSync=new Date().toISOString();saveSyncConfig();updateSyncStatus('on','متصل ومشترك')}catch(err){syncCfg.connected=false;saveSyncConfig();updateSyncStatus('err','تعذر الوصول للمزامنة')}finally{syncBusy=false;updateSyncStatus()}if(needsInitialPush){syncCfg.dirty=true;saveSyncConfig();await syncPush('initial_upload',true)}}
+async function syncPush(actionName='update',force=false){if(syncBusy||!syncCfg.url||!syncCfg.code)return;if(!force&&!syncCfg.dirty)return;syncBusy=true;updateSyncStatus('busy','جاري إرسال التحديث…');try{const images=await getAllImages();const payload=JSON.stringify({state,images});if(payload.length>22000000){syncBusy=false;updateSyncStatus('err','النسخة المشتركة كبيرة جدًا');toast('احذف بعض الصور المحلية أو استخدم روابط صور.');return}let frame=document.getElementById('brSyncFrame');if(!frame){frame=document.createElement('iframe');frame.id='brSyncFrame';frame.name='brSyncFrame';frame.style.display='none';document.body.appendChild(frame)}const form=document.createElement('form');form.method='POST';form.action=syncCfg.url;form.target='brSyncFrame';form.style.display='none';const fields={action:'write',code:syncCfg.code,deviceId:syncCfg.deviceId,deviceName:syncCfg.deviceName,clientVersion:'3.3',actionName,payload};Object.entries(fields).forEach(([k,v])=>{const i=document.createElement('input');i.type='hidden';i.name=k;i.value=String(v??'');form.appendChild(i)});document.body.appendChild(form);syncCfg.pendingPushBase=Number(syncCfg.revision||0);syncCfg.pendingPushAt=Date.now();syncCfg.connected=true;saveSyncConfig();form.submit();setTimeout(()=>form.remove(),1000);setTimeout(()=>{syncBusy=false;syncPull(false)},2200)}catch(err){syncCfg.connected=false;syncCfg.dirty=true;saveSyncConfig();syncBusy=false;updateSyncStatus('err','فشل إرسال التحديث')}}
 function scheduleSyncPush(){if(!syncCfg.url||!syncCfg.code)return;syncCfg.dirty=true;saveSyncConfig();clearTimeout(syncPushTimer);syncPushTimer=setTimeout(()=>syncPush('auto_save'),1100);updateSyncStatus()}
 function startSyncPolling(){clearInterval(syncPollTimer);if(syncCfg.url&&syncCfg.code){syncPollTimer=setInterval(()=>{if(!document.hidden&&!syncBusy&&!syncCfg.dirty)syncPull(false)},10000)}}
 function syncOnReturn(){if(syncCfg.url&&syncCfg.code&&!syncBusy&&!syncCfg.dirty)syncPull(false)}
@@ -235,9 +235,9 @@ function alternativesHTML(s){
       <div class="full"><label>ملاحظتك عن هذا الخيار</label><textarea data-alt-field="note" placeholder="ليش عجبك؟ الضمان، المقاس، المميزات...">${esc(a.note||'')}</textarea></div>
     </div>
     <div class="alt-actions">
-      <button class="alt-choose" data-alt-act="choose">${s.selectedAltId===a.id?'مختار ✓':'اختيار هذا'}</button>
-      <button class="alt-open" data-alt-act="open" ${a.url?'':'disabled'}>فتح الرابط</button>
-      <button class="alt-delete" data-alt-act="delete">حذف</button>
+      <button type="button" class="alt-choose" data-alt-act="choose">${s.selectedAltId===a.id?'مختار ✓':'اختيار هذا'}</button>
+      <button type="button" class="alt-open" data-alt-act="open" ${a.url?'':'disabled'}>فتح الرابط</button>
+      <button type="button" class="alt-delete" data-alt-act="delete">حذف الخيار</button>
     </div>
   </div>`).join('')}</div>`;
 }
@@ -249,9 +249,9 @@ function itemHTML(it){
 <div class="item-actions"><select class="quick-status" data-qstatus><option value="need" ${s.status==='need'?'selected':''}>مطلوب</option><option value="ordered" ${s.status==='ordered'?'selected':''}>تم الطلب</option><option value="received" ${s.status==='received'?'selected':''}>تم الاستلام</option><option value="hold" ${s.status==='hold'?'selected':''}>مؤجل</option></select><button class="buy-mini" data-act="buy" ${s.url?'':'disabled'}>شراء</button><button class="detail-mini" data-act="details">${expanded?'إغلاق':'التفاصيل'}</button></div></div></div>
 <div class="item-detail">${it.note?`<div class="note">💡 ${esc(it.note)}</div>`:''}${it.suggestion?`<div class="suggestion">⭐ <b>مرشح:</b> ${esc(it.suggestion)}</div>`:''}
 <div class="options-box">
-  <div class="options-head"><div><b>خيارات المنتجات</b><small>أضف أكثر من منتج لنفس الغرض واختر النهائي لاحقًا.</small></div><button class="options-add" data-act="addAlternative">＋ إضافة خيار</button></div>
+  <div class="options-head"><div><b>خيارات المنتجات</b><small>أضف أكثر من منتج لنفس الغرض واختر النهائي لاحقًا.</small></div><button type="button" class="options-add" data-act="addAlternative">＋ إضافة خيار</button></div>
   ${alternativesHTML(s)}
-  <div class="options-tip">عند الضغط على «اختيار هذا» يتم ربط السعر والمتجر والرابط والصورة بهذا البند تلقائيًا، وتظل بقية الخيارات محفوظة للمقارنة.</div>
+  <div class="options-tip">أضف الخيارات وقارنها، ثم «اختيار هذا». بعد الشراء غيّر الحالة إلى «تم الطلب»، وبعد وصوله إلى «تم الاستلام». كل المؤشرات والميزانية تتحدث تلقائيًا.</div>
 </div>
 ${sel?`<div class="selected-summary">✓ المنتج المختار حاليًا: <b>${esc(sel.name||'بدون اسم')}</b>${sel.merchant?` • ${esc(sel.merchant)}`:''}${sel.price?` • ${money(sel.price)}`:''}</div>`:''}
 <div class="form-grid"><div class="field"><label>الكمية المستهدفة</label><div class="qty"><button data-act="targetPlus">＋</button><input data-field="target" value="${s.target}" inputmode="numeric"><button data-act="targetMinus">−</button></div></div><div class="field"><label>تم استلام</label><div class="qty"><button data-act="ownedPlus">＋</button><input data-field="owned" value="${s.owned}" inputmode="numeric"><button data-act="ownedMinus">−</button></div></div>
@@ -263,42 +263,64 @@ ${sel?`<div class="selected-summary">✓ المنتج المختار حاليً�
 
 function renderChecklist(){const holder=document.getElementById('categories');holder.innerHTML='';let visible=0;for(const c of BASE.categories){let list=sortItems(allItems().filter(i=>i.cat===c.id&&matches(i)));if(!list.length)continue;visible+=list.length;const recv=list.filter(i=>st(i.id).status==='received').length;const el=document.createElement('div');el.className='category open';el.innerHTML=`<button class="cat-head"><div class="cat-icon">${c.icon}</div><div class="cat-meta"><div class="cat-title">${c.name}</div><div class="cat-desc">${c.desc}</div></div><div class="cat-count"><b>${recv}/${list.length}</b>مستلم</div><span class="chev">⌄</span></button><div class="cat-progress"><i style="width:${list.length?Math.round(recv/list.length*100):0}%"></i></div><div class="cat-body">${list.map(itemHTML).join('')}</div>`;holder.appendChild(el)}document.getElementById('visibleCount').textContent=`${visible} بند ظاهر`;if(!visible)holder.innerHTML='<div class="empty">لا توجد نتائج مطابقة.</div>';bindItems(holder);hydrateImages(holder)}
 
+
+let checklistRefreshTimer=null;
 function touchItem(s){s.updatedAt=new Date().toISOString()}
 function reconcileItemQty(s){s.target=Math.max(1,parseInt(s.target||1));s.owned=Math.max(0,parseInt(s.owned||0));if(s.owned>=s.target)s.status='received';else if(s.status==='received')s.status='need'}
+function applyItemStatus(s,next){const prev=s.status;s.status=next;if(next==='received'){s.owned=Math.max(Number(s.owned)||0,Number(s.target)||1)}else if(prev==='received'&&Number(s.owned)>=Number(s.target)){s.owned=0}}
+function refreshOperationalIndicators(){updateDashboard();renderBudget();if(document.querySelector('.panel.active')?.id==='favoritesPanel')renderFavorites()}
+function scheduleChecklistRefresh(id){clearTimeout(checklistRefreshTimer);const run=()=>{const active=document.activeElement;const item=active&&active.closest?active.closest('.item'):null;if(item&&item.dataset.id===id&&active.matches('input,textarea,select')){checklistRefreshTimer=setTimeout(run,350);return}if(document.querySelector('.panel.active')?.id==='checklistPanel')renderChecklist()};checklistRefreshTimer=setTimeout(run,350)}
+function altIsBlank(a){return !String(a.name||'').trim()&&!String(a.price||'').trim()&&!String(a.merchant||'').trim()&&!String(a.url||'').trim()&&!String(a.imageUrl||'').trim()&&!String(a.note||'').trim()}
 function bindItems(root=document){
   root.querySelectorAll('.cat-head').forEach(b=>b.onclick=()=>b.closest('.category').classList.toggle('open'));
   root.querySelectorAll('.item').forEach(el=>{
     const id=el.dataset.id,s=st(id);
     const qs=el.querySelector('[data-qstatus]');
-    if(qs)qs.onchange=()=>{s.status=qs.value;if(s.status==='received')s.owned=Math.max(Number(s.owned)||0,Number(s.target)||1);touchItem(s);save();renderCurrent()};
-    el.querySelectorAll('[data-field]').forEach(inp=>{inp.onchange=()=>{let v=inp.value,f=inp.dataset.field;if(f==='target'||f==='owned')v=Math.max(f==='target'?1:0,parseInt(v||0));s[f]=v;if(f==='target'||f==='owned')reconcileItemQty(s);touchItem(s);save();renderCurrent()}});
+    if(qs)qs.onchange=()=>{applyItemStatus(s,qs.value);touchItem(s);save(false);refreshOperationalIndicators();renderChecklist()};
+
+    el.querySelectorAll('[data-field]').forEach(inp=>{
+      const commit=()=>{let v=inp.value,f=inp.dataset.field;if(f==='target'||f==='owned')v=Math.max(f==='target'?1:0,parseInt(v||0));s[f]=v;if(f==='target'||f==='owned')reconcileItemQty(s);touchItem(s);save(false);refreshOperationalIndicators();scheduleChecklistRefresh(id)};
+      inp.oninput=commit;inp.onchange=commit;
+    });
+
     el.querySelectorAll('[data-act]').forEach(b=>b.onclick=async e=>{
-      e.preventDefault();const a=b.dataset.act;
-      if(a==='favorite'){s.favorite=!s.favorite;touchItem(s);save();renderCurrent();return}
+      e.preventDefault();e.stopPropagation();const a=b.dataset.act;
+      if(a==='favorite'){s.favorite=!s.favorite;touchItem(s);save(false);refreshOperationalIndicators();renderChecklist();return}
       if(a==='details'){expandedItem=expandedItem===id?null:id;renderChecklist();return}
       if(a==='buy'){safeOpen(s.url);return}
-      if(a==='addAlternative'){if(!Array.isArray(s.alternatives))s.alternatives=[];s.alternatives.push({id:'opt-'+Date.now()+'-'+(s.alternatives.length+1),name:'',price:'',merchant:'',url:'',imageUrl:'',note:''});touchItem(s);expandedItem=id;save(false);renderChecklist();toast('تمت إضافة خيار جديد');return}
+      if(a==='addAlternative'){if(!Array.isArray(s.alternatives))s.alternatives=[];s.alternatives.push({id:'opt-'+Date.now()+'-'+Math.random().toString(36).slice(2,7),name:'',price:'',merchant:'',url:'',imageUrl:'',note:''});touchItem(s);expandedItem=id;save(false);renderChecklist();refreshOperationalIndicators();toast('تمت إضافة خيار جديد');return}
       if(a==='targetPlus'){s.target=Number(s.target)+1;reconcileItemQty(s)}
       if(a==='targetMinus'){s.target=Math.max(1,Number(s.target)-1);reconcileItemQty(s)}
       if(a==='ownedPlus'){s.owned=Number(s.owned)+1;reconcileItemQty(s)}
       if(a==='ownedMinus'){s.owned=Math.max(0,Number(s.owned)-1);reconcileItemQty(s)}
       if(a==='uploadImage'){el.querySelector('[data-image-input]').click();return}
-      if(a==='removeImage'){s.imageUrl='';await dbDel(id);touchItem(s);save();renderChecklist();return}
-      if(a==='deleteCustom'){if(confirm('حذف هذا البند المخصص وكل بياناته؟')){state.custom=state.custom.filter(x=>x.id!==id);delete state.items[id];expandedItem=null;await dbDel(id);save();renderChecklist()}return}
-      touchItem(s);save();renderCurrent();
+      if(a==='removeImage'){s.imageUrl='';await dbDel(id);touchItem(s);save(false);refreshOperationalIndicators();renderChecklist();return}
+      if(a==='deleteCustom'){if(confirm('حذف هذا البند المخصص وكل بياناته؟')){state.custom=state.custom.filter(x=>x.id!==id);delete state.items[id];expandedItem=null;await dbDel(id);save(false);refreshOperationalIndicators();renderChecklist();toast('تم حذف البند')}return}
+      touchItem(s);save(false);refreshOperationalIndicators();renderChecklist();
     });
+
     el.querySelectorAll('.alt-card').forEach(card=>{
       const aid=card.dataset.altId,alt=alternativesOf(s).find(x=>x.id===aid);if(!alt)return;
-      card.querySelectorAll('[data-alt-field]').forEach(inp=>{inp.onchange=()=>{alt[inp.dataset.altField]=inp.value;if(s.selectedAltId===alt.id)syncAlternative(s,alt);touchItem(s);save(false);renderChecklist();updateDashboard()}});
+      card.querySelectorAll('[data-alt-field]').forEach(inp=>{
+        const commit=()=>{alt[inp.dataset.altField]=inp.value;if(s.selectedAltId===alt.id)syncAlternative(s,alt);touchItem(s);save(false);refreshOperationalIndicators();scheduleChecklistRefresh(id)};
+        inp.oninput=commit;inp.onchange=commit;
+      });
       card.querySelectorAll('[data-alt-act]').forEach(btn=>btn.onclick=e=>{
-        e.preventDefault();const act=btn.dataset.altAct;
-        if(act==='choose'){syncAlternative(s,alt);touchItem(s);save(false);renderChecklist();updateAll();toast('تم اختيار هذا المنتج');return}
+        e.preventDefault();e.stopPropagation();const act=btn.dataset.altAct;
+        if(act==='choose'){syncAlternative(s,alt);touchItem(s);save(false);refreshOperationalIndicators();renderChecklist();toast('تم اختيار هذا المنتج');return}
         if(act==='open'){safeOpen(alt.url);return}
-        if(act==='delete'){if(confirm('حذف هذا الخيار فقط؟')){if(s.selectedAltId===alt.id){if(String(s.url||'')===String(alt.url||''))s.url='';if(String(s.price||'')===String(alt.price||''))s.price='';if(String(s.merchant||'')===String(alt.merchant||''))s.merchant='';if(String(s.imageUrl||'')===String(alt.imageUrl||''))s.imageUrl='';s.selectedAltId=''}s.alternatives=alternativesOf(s).filter(x=>x.id!==alt.id);touchItem(s);save(false);renderChecklist();updateAll();toast('تم حذف الخيار')}return}
+        if(act==='delete'){
+          const ok=altIsBlank(alt)||confirm('حذف هذا الخيار؟');if(!ok)return;
+          const wasSelected=s.selectedAltId===alt.id;
+          if(wasSelected){s.selectedAltId='';s.price='';s.url='';s.merchant='';s.imageUrl=''}
+          s.alternatives=alternativesOf(s).filter(x=>x.id!==alt.id);
+          touchItem(s);save(false);refreshOperationalIndicators();renderChecklist();toast(wasSelected?'تم حذف الخيار المختار ومسح بياناته النهائية':'تم حذف الخيار');return;
+        }
       });
     });
+
     const fi=el.querySelector('[data-image-input]');
-    if(fi)fi.onchange=async()=>{const f=fi.files&&fi.files[0];if(!f)return;try{const data=await resizeImage(f);await dbSet(id,data);s.imageUrl='';touchItem(s);save(false);toast('تم حفظ الصورة ومزامنتها');renderChecklist()}catch(e){toast('تعذر حفظ الصورة')}};
+    if(fi)fi.onchange=async()=>{const file=fi.files&&fi.files[0];if(!file)return;try{const data=await resizeImage(file);await dbSet(id,data);s.imageUrl='';touchItem(s);save(false);refreshOperationalIndicators();renderChecklist();toast('تم حفظ الصورة ومزامنتها')}catch(e){toast('تعذر حفظ الصورة')}};
   });
 }
 
@@ -326,7 +348,7 @@ function exportCSV(){const rows=[['القسم','البند','الأهمية','ح
 function init(){load();renderSafety();filterChips();document.getElementById('catFilter').innerHTML='<option value="all">كل الأقسام</option>'+BASE.categories.map(c=>`<option value="${c.id}">${c.icon} ${c.name}</option>`).join('');document.getElementById('catFilter').value=catFilter;bindProfile();updateAll();
 document.querySelectorAll('.nav-btn').forEach(b=>b.onclick=()=>showPanel(b.dataset.panel));document.getElementById('search').oninput=e=>{searchText=e.target.value.toLowerCase();renderChecklist()};document.getElementById('catFilter').onchange=e=>{catFilter=e.target.value;renderChecklist()};document.getElementById('priorityFilter').onchange=e=>{priorityFilter=e.target.value;renderChecklist()};document.getElementById('sortBy').onchange=e=>{sortBy=e.target.value;renderChecklist()};
 document.getElementById('themeBtn').onclick=()=>{const d=document.documentElement.dataset.theme==='dark'?'':'dark';document.documentElement.dataset.theme=d;try{localStorage.setItem(THEME_KEY,d)}catch(e){}};
-const im=document.getElementById('itemModal'),hm=document.getElementById('helpModal');document.getElementById('newCat').innerHTML=BASE.categories.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');document.getElementById('addItemBtn').onclick=()=>im.classList.add('show');document.getElementById('cancelNew').onclick=()=>im.classList.remove('show');document.getElementById('saveNew').onclick=()=>{const name=document.getElementById('newName').value.trim();if(!name)return toast('اكتب اسم البند');const id='custom-'+Date.now(),it={id,cat:document.getElementById('newCat').value,name,qty:Number(document.getElementById('newQty').value)||1,priority:document.getElementById('newPriority').value,timeline:'before',note:document.getElementById('newNote').value.trim(),unit:document.getElementById('newUnit').value.trim()||'قطعة',url:'',suggestion:'',custom:true};state.custom.push(it);state.items[id]=defaultItem(it);save();im.classList.remove('show');document.getElementById('newName').value='';document.getElementById('newNote').value='';showPanel('checklistPanel');toast('تمت إضافة البند')};
+const im=document.getElementById('itemModal'),hm=document.getElementById('helpModal');document.getElementById('newCat').innerHTML=BASE.categories.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');document.getElementById('addItemBtn').onclick=()=>im.classList.add('show');document.getElementById('cancelNew').onclick=()=>im.classList.remove('show');document.getElementById('saveNew').onclick=()=>{const name=document.getElementById('newName').value.trim();if(!name)return toast('اكتب اسم البند');const id='custom-'+Date.now()+'-'+Math.random().toString(36).slice(2,6),it={id,cat:document.getElementById('newCat').value,name,qty:Math.max(1,Number(document.getElementById('newQty').value)||1),priority:document.getElementById('newPriority').value,timeline:'before',note:document.getElementById('newNote').value.trim(),unit:document.getElementById('newUnit').value.trim()||'قطعة',url:'',suggestion:'',custom:true};state.custom.push(it);state.items[id]=defaultItem(it);save(false);im.classList.remove('show');document.getElementById('newName').value='';document.getElementById('newNote').value='';document.getElementById('newQty').value='1';document.getElementById('newUnit').value='قطعة';document.getElementById('newPriority').value='recommended';refreshOperationalIndicators();showPanel('checklistPanel');toast('تمت إضافة البند')};
 document.getElementById('helpBtn').onclick=()=>hm.classList.add('show');document.getElementById('closeHelp').onclick=()=>hm.classList.remove('show');[im,hm].forEach(m=>m.onclick=e=>{if(e.target===m)m.classList.remove('show')});
 document.getElementById('exportBtn').onclick=exportBackup;document.getElementById('csvBtn').onclick=exportCSV;document.getElementById('printBtn').onclick=()=>window.print();document.getElementById('importBtn').onclick=()=>document.getElementById('importFile').click();document.getElementById('importFile').onchange=e=>{const f=e.target.files&&e.target.files[0];if(!f)return;const r=new FileReader();r.onload=async()=>{try{const o=JSON.parse(r.result);let s=o.state||o;if(!s.items)throw 0;if((o.version||s.version)===1)s=migrateV1(s);state={...defaults(),...s,profile:{...defaults().profile,...(s.profile||{})},meta:{...defaults().meta,...(s.meta||{})}};state.version=3;syncApplyingRemote=true;await restoreImages(o.images||{});try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}syncApplyingRemote=false;bindProfile();updateAll();showPanel('dashboardPanel');if(syncCfg.url&&syncCfg.code){syncCfg.dirty=true;saveSyncConfig();updateSyncStatus();toast('تمت الاستعادة محليًا؛ اضغط «إرسال الآن» لمشاركتها.')}else toast('تمت استعادة النسخة كاملة على هذا الجهاز')}catch(err){syncApplyingRemote=false;alert('الملف غير صالح أو ليس نسخة BabyReady.')}};r.readAsText(f)};
 document.getElementById('resetBtn').onclick=async()=>{const shared=!!(syncCfg.url&&syncCfg.code);const msg=shared?'سيتم مسح بيانات هذا الجهاز فقط وفصل المزامنة عنه. البيانات المشتركة للأجهزة الأخرى لن تُحذف. هل أنت متأكد؟':'سيتم حذف بيانات BabyReady المحلية والصور من هذا الجهاز. هل أنت متأكد؟';if(!confirm(msg))return;syncApplyingRemote=true;state=defaults();await restoreImages({});try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}syncApplyingRemote=false;if(shared){syncCfg={...syncCfg,code:'',revision:0,lastSync:'',connected:false,dirty:false};saveSyncConfig();clearInterval(syncPollTimer);fillSyncFields();updateSyncStatus()}bindProfile();updateAll();showPanel('dashboardPanel');toast(shared?'تم مسح هذا الجهاز وفصل المزامنة':'تم مسح بيانات هذا الجهاز')};
