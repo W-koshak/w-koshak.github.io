@@ -1,10 +1,10 @@
 {
   "name": "BabyReady — تجهيز أول مولود",
   "short_name": "BabyReady",
-  "description": "قائمة تجهيز المولود والميزانية والمشتريات. بياناتك الشخصية تبقى محليًا على جهازك.",
+  "description": "قائمة تجهيز المولود والميزانية والمشتريات. بياناتك تحفظ محليًا ويمكن مزامنتها بشكل خاص بين أجهزتك.",
   "lang": "ar",
   "dir": "rtl",
-  "start_url": "./app.html?v=20261013-2",
+  "start_url": "./app.html?v=20261014-32",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f4f7f7",

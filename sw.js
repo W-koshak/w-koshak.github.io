@@ -1,5 +1,5 @@
-const CACHE='babyready-v2-prod-20261013-2';
-const APP='./app.html?v=20261013-2';
+const CACHE='babyready-v3-final-20261014-32';
+const APP='./app.html?v=20261014-32';
 const SHELL=[APP,'./app.html','./manifest.webmanifest','./icon.svg'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting()));
