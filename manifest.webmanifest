@@ -4,7 +4,7 @@
   "description": "قائمة تجهيز المولود والميزانية والمشتريات. بياناتك تحفظ محليًا ويمكن مزامنتها بشكل خاص بين أجهزتك.",
   "lang": "ar",
   "dir": "rtl",
-  "start_url": "./app.html?v=20261014-33",
+  "start_url": "./app.html?v=20261014-34",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f4f7f7",
