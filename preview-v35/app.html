@@ -100,6 +100,8 @@ body{padding-bottom:calc(110px + var(--safe-bottom));font-size:14px}
 .alt-edit{border:1px solid var(--line);margin-bottom:10px}.alt-edit summary{padding:9px 10px;font-size:11px;font-weight:800;cursor:pointer}.alt-edit .alt-grid{padding:0 10px 10px}.alt-actions button{font-size:11px!important;padding:9px 10px!important}
 .field label,.alt-grid label{font-size:11px}.field input,.field select,.field textarea,.alt-grid input,.alt-grid textarea{font-size:16px;min-height:41px}
 .sticky-tools{top:60px}.search{font-size:16px}.chip{font-size:12px;padding:9px 12px}.mini-select{font-size:13px}
+.preview-info{background:var(--soft);border:1px solid var(--line);padding:13px 15px;border-radius:16px;font-size:12px;line-height:1.9;margin-top:14px;color:var(--ink)}
+.hero-copy p{font-size:13px}.metric span,.budget-metric span{font-size:12px}.metric b{font-size:20px}.tag{font-size:10px}.status{font-size:11px}.fav-body small{font-size:11px}.alt-grid label{font-size:11px}.alt-list .alt-index{font-size:11px}.sync-hint{font-size:11px}
 .favorites-shortcut{border:1px solid var(--line);background:var(--card);border-radius:13px;padding:12px 16px;font-weight:850;color:var(--ink);margin-top:15px;width:100%;text-align:right}
 .modal-wrap{z-index:110}.modal{max-height:min(90vh,880px);max-height:min(90dvh,880px)}.quick-choice-modal{padding-bottom:20px}
 .quick-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px}.quick-head h3{margin:0;font-size:19px}.quick-close{border:0;background:var(--soft);color:var(--ink);width:34px;height:34px;border-radius:50%;font-size:15px}
@@ -157,7 +159,7 @@ body{padding-bottom:calc(110px + var(--safe-bottom));font-size:14px}
   <div class="section-title"><h3>الأساسيات الناقصة</h3><span id="missingCount"></span></div><div class="action-list" id="missingList"></div>
 </section>
 
-<section id="morePanel" class="panel"><button type="button" class="favorites-shortcut" data-preview-go="favoritesPanel">♡ فتح المفضلة</button>
+<section id="morePanel" class="panel"><div class="preview-info">🧪 أنت تستخدم نسخة تجريبية مستقلة. لن تُغيّر البيانات في تطبيقك الأصلي. مزامنة Google Sheets معطّلة هنا مؤقتًا.</div><button type="button" class="favorites-shortcut" data-preview-go="favoritesPanel">♡ فتح المفضلة</button>
   <div class="page-head"><h2>المزيد</h2><p>الأمان، ملف الطفل، النسخ الاحتياطي وإعدادات التطبيق.</p></div>
   <div class="section-title"><h3>دليل الأمان السريع</h3><span>مرجع مختصر</span></div><div class="safety-grid" id="safetyGrid"></div>
   <div class="section-title"><h3>أشياء لا أنصح بشرائها الآن</h3><span>أمان + توفير</span></div><div class="avoid" id="avoidList"></div>
@@ -501,6 +503,7 @@ if ('serviceWorker' in navigator) {
     $('quickCat').addEventListener('change',populateParents);
     $('quickParent').addEventListener('change',showNewParent);
     $('quickAddFab').addEventListener('click',openChoices);
+    const oldAdd=$('addItemBtn');if(oldAdd)oldAdd.onclick=openChoices;
     document.querySelectorAll('[data-preview-go]').forEach(b=>b.addEventListener('click',()=>showPanel(b.dataset.previewGo)));
     document.querySelectorAll('[data-quick-mode]').forEach(b=>b.addEventListener('click',()=>openForm(b.dataset.quickMode)));
     document.querySelectorAll('[data-close-quick]').forEach(b=>b.addEventListener('click',closeAll));
