@@ -1,0 +1,22 @@
+{
+  "id": "./",
+  "name": "BabyReady V3.5 — تجربة الواجهة الجديدة",
+  "short_name": "BabyReady تجربة",
+  "description": "نسخة تجريبية مستقلة من BabyReady لتجربة واجهة مبسطة وإضافة المنتجات بالتصوير",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f7f7",
+  "theme_color": "#0a7c72",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
