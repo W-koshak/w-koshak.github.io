@@ -14,7 +14,7 @@
 <link rel="manifest" href="./manifest.webmanifest" />
 <link rel="apple-touch-icon" href="./icon.svg" />
 <link rel="icon" type="image/png" sizes="192x192" href="./icon.svg" />
-<title>BabyReady V3.4 — تجهيز أول مولود</title>
+<title>BabyReady V3.5 — تجهيز أول مولود</title>
 <style>
 :root{
   --bg:#f4f7f7;--card:#fff;--card2:#f9fbfb;--ink:#132326;--muted:#6b7c80;--line:#e3ebec;
@@ -76,17 +76,54 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}.container{width
 [data-theme="dark"] .selected-summary{background:#143124;color:#8de3b6}
 
 @media print{.topbar,.bottom-nav,.sticky-tools,.item-actions,.image-tools,.modal-wrap,.toast,.top-actions{display:none!important}body{padding:0;background:white;color:black}.panel{display:block!important}.category{box-shadow:none;break-inside:avoid}.cat-body{display:block!important}.item-detail{display:none!important}.hero{background:white;color:black;border:1px solid #ddd;box-shadow:none}.ring{display:none}.fav-grid{display:none}.settings{box-shadow:none}}
+
+/* BabyReady V3.5 UX Preview – isolated from production */
+[hidden]{display:none!important}
+body{padding-bottom:calc(110px + var(--safe-bottom));font-size:14px}
+.topbar-inner{height:60px}.brand h1{font-size:17px}.brand small{font-size:11px}
+.page-head{padding:17px 0 12px}.page-head h2{font-size:23px}.page-head p{font-size:12px}
+.bottom-nav{height:74px;border-radius:24px;grid-template-columns:repeat(5,minmax(0,1fr));bottom:calc(9px + var(--safe-bottom));align-items:end;padding:4px 6px 7px}
+.bottom-nav .nav-btn{height:60px;min-width:0;font-size:11px;gap:4px}.bottom-nav .nav-btn .ni{font-size:23px}.bottom-nav .nav-btn.active{font-weight:900}
+.fab-add{border:0;background:transparent;color:var(--primary2);display:flex;align-items:center;justify-content:flex-end;flex-direction:column;height:82px;gap:1px;font-size:11px;font-weight:900;padding:0 0 2px}
+.plus-circle{width:64px;height:64px;display:grid;place-items:center;font-size:37px;font-weight:400;line-height:1;color:white;background:linear-gradient(145deg,#0a8f80,#075d56);border:5px solid var(--bg);border-radius:50%;box-shadow:0 6px 22px rgba(10,124,114,.33)}
+.home-shortcuts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:14px 0 7px}
+.home-shortcuts button{border:1px solid var(--line);background:var(--card);border-radius:17px;display:flex;flex-direction:column;align-items:center;gap:6px;padding:13px 5px;color:var(--ink);font-size:11px;box-shadow:var(--shadow)}
+.home-shortcuts button span{font-size:23px}.home-shortcuts button b{font-size:11px}
+.home-more,.filter-more,.extra-item,.alt-edit,.quick-extra{border-radius:15px}
+.home-more{margin-top:15px}.home-more>summary,.filter-more>summary{cursor:pointer;list-style:none;padding:13px 15px;font-size:12px;font-weight:850;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.home-more>summary::-webkit-details-marker,.filter-more>summary::-webkit-details-marker{display:none}
+.home-more>summary span{float:left}.filter-more{margin-top:9px}.filter-more .sort-row{padding:10px 0 0}
+.category{margin:9px 0;border-radius:18px}.cat-head{padding:14px}.cat-title{font-size:15px}.cat-desc{font-size:11px}.item{padding:12px}.item-name{font-size:14px;line-height:1.65}.item-actions{flex-wrap:wrap;gap:8px}.item-actions button,.item-actions select{min-height:36px;font-size:12px}
+.item-detail .options-box{margin-top:7px}.options-head{align-items:flex-start}.options-head b{font-size:13px}.options-head small{font-size:11px}.options-add{font-size:12px;padding:10px}
+.extra-item{margin-top:12px;border:1px solid var(--line);background:var(--card2)}.extra-item>summary{cursor:pointer;padding:12px;font-weight:850;font-size:12px}.extra-item .form-grid{padding:0 12px 12px}
+.alt-card{padding:12px}.alt-summary{display:flex;align-items:center;gap:10px;margin-bottom:9px}.alt-photo{width:60px;height:60px;border-radius:14px;display:grid;place-items:center;overflow:hidden;background:var(--soft);flex:none}.alt-photo .ph{font-size:26px}.alt-photo img{height:100%;width:100%;object-fit:cover;display:none}.alt-photo img.ready{display:block}.alt-overview{flex:1;min-width:0}.alt-overview b{display:block;font-size:13px}.alt-overview small{display:block;font-size:11px;color:var(--muted);margin-top:3px}
+.alt-edit{border:1px solid var(--line);margin-bottom:10px}.alt-edit summary{padding:9px 10px;font-size:11px;font-weight:800;cursor:pointer}.alt-edit .alt-grid{padding:0 10px 10px}.alt-actions button{font-size:11px!important;padding:9px 10px!important}
+.field label,.alt-grid label{font-size:11px}.field input,.field select,.field textarea,.alt-grid input,.alt-grid textarea{font-size:16px;min-height:41px}
+.sticky-tools{top:60px}.search{font-size:16px}.chip{font-size:12px;padding:9px 12px}.mini-select{font-size:13px}
+.preview-info{background:var(--soft);border:1px solid var(--line);padding:13px 15px;border-radius:16px;font-size:12px;line-height:1.9;margin-top:14px;color:var(--ink)}
+.hero-copy p{font-size:13px}.metric span,.budget-metric span{font-size:12px}.metric b{font-size:20px}.tag{font-size:10px}.status{font-size:11px}.fav-body small{font-size:11px}.alt-grid label{font-size:11px}.alt-list .alt-index{font-size:11px}.sync-hint{font-size:11px}
+.favorites-shortcut{border:1px solid var(--line);background:var(--card);border-radius:13px;padding:12px 16px;font-weight:850;color:var(--ink);margin-top:15px;width:100%;text-align:right}
+.modal-wrap{z-index:110}.modal{max-height:min(90vh,880px);max-height:min(90dvh,880px)}.quick-choice-modal{padding-bottom:20px}
+.quick-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px}.quick-head h3{margin:0;font-size:19px}.quick-close{border:0;background:var(--soft);color:var(--ink);width:34px;height:34px;border-radius:50%;font-size:15px}
+.quick-choice{display:flex;align-items:center;gap:12px;text-align:right;background:var(--card2);color:var(--ink);border:1px solid var(--line);border-radius:17px;width:100%;padding:13px;margin-top:9px}
+.quick-choice .choice-icon{width:49px;height:49px;display:grid;place-items:center;background:var(--soft);border-radius:14px;font-size:24px;flex:none}.quick-choice>span:nth-child(2){flex:1}.quick-choice b{display:block;font-size:14px}.quick-choice small{display:block;font-size:11px;color:var(--muted);margin-top:3px}.quick-choice>span:last-child{font-size:24px;color:var(--muted)}
+.photo-zone{background:var(--soft);min-height:145px;max-height:210px;border:1px dashed var(--primary);border-radius:18px;display:grid;place-items:center;text-align:center;overflow:hidden}.photo-zone>div{padding:18px}.photo-zone .photo-icon{font-size:35px;display:block}.photo-zone b{font-size:13px;display:block;margin-top:5px}.photo-zone small{font-size:11px;display:block;color:var(--muted);margin-top:5px}.photo-zone img{width:100%;height:210px;object-fit:contain}
+.photo-actions{display:flex;gap:8px;margin:9px 0 16px}.photo-actions button{border:1px solid var(--line);border-radius:12px;background:var(--card2);color:var(--ink);padding:9px 12px;font-weight:800;font-size:12px}
+.quick-form{display:grid;gap:11px}.quick-form label{display:grid;gap:5px;font-size:12px;color:var(--muted);font-weight:750}.quick-form input,.quick-form select,.quick-form textarea{width:100%;border:1px solid var(--line);background:var(--card2);color:var(--ink);border-radius:13px;padding:11px;font-size:16px;min-height:45px;outline:none}.quick-form textarea{min-height:73px}.quick-form .quick-two{display:grid;grid-template-columns:1fr 1fr;gap:9px}.quick-extra{border:1px solid var(--line);padding:11px}.quick-extra summary{color:var(--ink);font-size:12px;font-weight:850;cursor:pointer}.quick-extra label{margin-top:11px}
+.quick-bottom{display:grid;grid-template-columns:2fr 1fr;gap:9px;margin-top:16px}.quick-bottom button{border:1px solid var(--line);border-radius:14px;background:var(--card2);color:var(--ink);padding:12px;font-size:13px;font-weight:900}.quick-bottom #quickSaveBtn{background:var(--primary);color:white;border-color:var(--primary)}.quick-notice{display:block;color:var(--muted);margin-top:10px;line-height:1.7;font-size:11px}
+.preview-chip{font-size:10px;color:var(--primary);border:1px solid var(--line);border-radius:50px;padding:3px 7px;margin-inline-start:5px}
+@media(max-width:420px){.hero-grid{gap:9px}.hstat span{font-size:10px}.quick-form .quick-two{gap:7px}.quick-two input{padding:9px}.bottom-nav .nav-btn{font-size:10px}}
 </style>
 </head>
 <body>
 <header class="topbar"><div class="container topbar-inner">
-  <div class="brand"><div class="app-icon">🍼</div><div><h1>BabyReady <span style="font-size:9px;color:var(--primary)">V3.4</span></h1><small id="brandSub">تجهيز أول مولود</small></div></div>
+  <div class="brand"><div class="app-icon">🍼</div><div><h1>BabyReady <span style="font-size:9px;color:var(--primary)">V3.5</span></h1><small id="brandSub">تجهيز أول مولود</small></div></div>
   <div class="top-actions"><button class="icon-btn" id="themeBtn" aria-label="الوضع الليلي">◐</button><button class="icon-btn" id="helpBtn" aria-label="المساعدة">?</button></div>
 </div></header>
 
 <main class="container">
 <section id="dashboardPanel" class="panel active">
-  <div class="page-head"><h2 id="helloTitle">جاهزين للبيبي؟ 👶</h2><p id="helloSub">كل شيء في مكان واحد، ومحفوظ على جهازك.</p></div>
+  <div class="page-head"><h2 id="helloTitle">تجهيزات البيبي 👶</h2><p id="helloSub">كل شيء في مكان واحد، ومحفوظ على جهازك.</p></div>
   <div class="hero"><div class="hero-grid">
     <div class="ring" id="ring"><div class="ring-in"><b id="progressPct">0%</b><span>جاهزية الأساسيات</span></div></div>
     <div class="hero-copy"><h3>لوحة التجهيز</h3><p>النسبة تحسب الأساسيات التي تم استلامها فقط.</p>
@@ -94,20 +131,20 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}.container{width
       <div class="save-line">🔒 <span id="saveState">الحفظ محلي على الجهاز</span></div>
     </div>
   </div></div>
-  <div class="section-title"><h3>ملخص سريع</h3><span>يتحدث تلقائيًا</span></div>
+  <div class="home-shortcuts"><button type="button" data-preview-go="checklistPanel"><span>☑️</span><b>قائمة التجهيز</b></button><button type="button" data-preview-go="favoritesPanel"><span>♡</span><b>المفضلة</b></button><button type="button" data-preview-go="budgetPanel"><span>◴</span><b>الميزانية</b></button></div><div class="section-title"><h3>ملخص سريع</h3><span>يتحدث تلقائيًا</span></div>
   <div class="grid4"><div class="metric"><div class="mi">📦</div><b id="receivedMetric">0</b><span>تم الاستلام</span></div><div class="metric"><div class="mi">❤️</div><b id="favMetric">0</b><span>في المفضلة</span></div><div class="metric"><div class="mi">🛒</div><b id="missingMetric">0</b><span>ما زال مطلوبًا</span></div><div class="metric"><div class="mi">🏥</div><b id="hospitalMetric">0%</b><span>شنطة المستشفى</span></div></div>
   <div class="section-title"><h3>الميزانية</h3><span id="budgetLabel">حدد ميزانية من الإعدادات</span></div>
   <div class="budget-card"><div class="budget-line"><div><span>المصروف الفعلي</span><b id="dashActual">0 ر.س</b></div><div style="text-align:left"><span>المخطط</span><b id="dashPlanned">0 ر.س</b></div></div><div class="bar"><i id="budgetBar"></i></div><div class="budget-sub"><span id="budgetLeft">—</span><span id="budgetPct">0%</span></div></div>
   <div class="section-title"><h3>الخطوة التالية</h3><span>أهم الأشياء الناقصة</span></div><div class="action-list" id="nextActions"></div>
-  <div class="section-title"><h3>تقدم الأقسام</h3><span>اسحب أفقيًا</span></div><div class="category-scroll" id="categoryMini"></div>
-  <div class="section-title"><h3>مواعيد شراء قادمة</h3><span id="upcomingLabel"></span></div><div class="action-list" id="upcomingList"></div>
+  <details class="home-more"><summary>عرض تفاصيل الأقسام والمواعيد القادمة <span>⌄</span></summary><div class="section-title"><h3>تقدم الأقسام</h3><span>اسحب أفقيًا</span></div><div class="category-scroll" id="categoryMini"></div>
+  <div class="section-title"><h3>مواعيد شراء قادمة</h3><span id="upcomingLabel"></span></div><div class="action-list" id="upcomingList"></div></details>
 </section>
 
 <section id="checklistPanel" class="panel">
   <div class="page-head"><h2>قائمة التجهيز</h2><p><span id="visibleCount">0</span> — ابحث وفرز وعدّل كل بند.</p></div>
   <div class="sticky-tools"><div class="search-row"><input id="search" class="search" placeholder="ابحث: سرير، رضاعة، حفاضات..." /><button class="add-btn" id="addItemBtn">＋ إضافة</button></div>
     <div class="chips" id="filterRow"></div>
-    <div class="sort-row"><select id="catFilter" class="mini-select"></select><select id="priorityFilter" class="mini-select"><option value="all">كل الأولويات</option><option value="essential">أساسي</option><option value="recommended">مهم</option><option value="optional">اختياري</option></select><select id="sortBy" class="mini-select"><option value="default">الترتيب الأصلي</option><option value="priority">الأولوية</option><option value="date">موعد الشراء</option><option value="priceHigh">السعر الأعلى</option><option value="priceLow">السعر الأقل</option></select></div>
+    <details class="filter-more"><summary>⚙️ خيارات التصفية والفرز</summary><div class="sort-row"><select id="catFilter" class="mini-select"></select><select id="priorityFilter" class="mini-select"><option value="all">كل الأولويات</option><option value="essential">أساسي</option><option value="recommended">مهم</option><option value="optional">اختياري</option></select><select id="sortBy" class="mini-select"><option value="default">الترتيب الأصلي</option><option value="priority">الأولوية</option><option value="date">موعد الشراء</option><option value="priceHigh">السعر الأعلى</option><option value="priceLow">السعر الأقل</option></select></div></details>
   </div><div id="categories"></div>
 </section>
 
@@ -122,7 +159,7 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}.container{width
   <div class="section-title"><h3>الأساسيات الناقصة</h3><span id="missingCount"></span></div><div class="action-list" id="missingList"></div>
 </section>
 
-<section id="morePanel" class="panel">
+<section id="morePanel" class="panel"><div class="preview-info">✨ الإصدار V3.5 — واجهة أسهل مع حفظ بياناتك ومزامنتها كما كانت.</div><button type="button" class="favorites-shortcut" data-preview-go="favoritesPanel">♡ فتح المفضلة</button><div class="settings" id="previewImportArea" hidden><h3>بيانات النسخة التجريبية</h3><p style="font-size:12px;color:var(--muted);line-height:1.8">تم العثور على بيانات أُدخلت في نسخة V3.5 التجريبية على هذا المتصفح. تستطيع دمج الإضافات مع بياناتك الحالية بدون استبدالها.</p><button type="button" id="previewImportBtn" class="action primary" style="width:100%">دمج إضافات النسخة التجريبية بأمان</button></div>
   <div class="page-head"><h2>المزيد</h2><p>الأمان، ملف الطفل، النسخ الاحتياطي وإعدادات التطبيق.</p></div>
   <div class="section-title"><h3>دليل الأمان السريع</h3><span>مرجع مختصر</span></div><div class="safety-grid" id="safetyGrid"></div>
   <div class="section-title"><h3>أشياء لا أنصح بشرائها الآن</h3><span>أمان + توفير</span></div><div class="avoid" id="avoidList"></div>
@@ -143,21 +180,36 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}.container{width
   <div class="settings"><div class="action-grid"><button class="action primary" id="exportBtn">⬇︎ نسخة احتياطية كاملة</button><button class="action" id="importBtn">⬆︎ استعادة نسخة</button><button class="action" id="csvBtn">▦ تصدير CSV</button><button class="action" id="printBtn">⎙ طباعة / PDF</button><button class="action" id="expandBtn">⌄ فتح كل الأقسام</button><button class="action danger" id="resetBtn">⌫ مسح هذا الجهاز</button></div><input id="importFile" type="file" accept="application/json,.json" hidden /><div class="privacy">🔐 يحتفظ التطبيق بنسخة محلية على الجهاز. عند تشغيل المزامنة المشتركة، تُحفظ نسخة مشتركة في Google Sheet الخاص بك وتُستخدم لمزامنة الأجهزة المصرح لها فقط.</div></div>
   <div class="section-title"><h3>أفضل استخدام على الآيفون</h3><span>Safari + الشاشة الرئيسية</span></div>
   <div class="settings"><div style="font-size:11px;color:var(--muted);line-height:1.85">افتح BabyReady من Safari، ثم مشاركة ⬆︎ → إضافة إلى الشاشة الرئيسية. بعدها يفتح كتطبيق مستقل. لا تحتاج Textastic. عند وجود اتصال بالإنترنت تتم المزامنة المشتركة، وتبقى نسخة محلية للاستخدام السريع.</div></div>
-  <div class="version">BabyReady V3.4 • Shared Family Sync • Flow Verified</div>
+  <div class="version">BabyReady V3.5 • Shared Family Sync • Flow Verified</div>
 </section>
 </main>
 
-<nav class="bottom-nav">
+<nav class="bottom-nav" aria-label="التنقل الرئيسي">
 <button class="nav-btn active" data-panel="dashboardPanel"><span class="ni">⌂</span><span>الرئيسية</span></button>
-<button class="nav-btn" data-panel="checklistPanel"><span class="ni">☑️</span><span>القائمة</span></button>
-<button class="nav-btn" data-panel="favoritesPanel" style="position:relative"><span class="ni">♡</span><span>المفضلة</span><span class="nav-badge hidden" id="favBadge">0</span></button>
+<button class="nav-btn" data-panel="checklistPanel"><span class="ni">☑</span><span>القائمة</span></button>
+<button id="quickAddFab" class="fab-add" type="button" aria-label="إضافة منتج أو بند"><span class="plus-circle">+</span><span>إضافة</span></button>
 <button class="nav-btn" data-panel="budgetPanel"><span class="ni">◴</span><span>الميزانية</span></button>
 <button class="nav-btn" data-panel="morePanel"><span class="ni">•••</span><span>المزيد</span></button>
+<span class="hidden" id="favBadge"></span>
 </nav>
 
 <div class="modal-wrap" id="itemModal"><div class="modal"><div class="handle"></div><h3>إضافة بند جديد</h3><div class="form-grid">
 <div class="field full"><label>اسم البند</label><input id="newName" placeholder="مثال: غطاء عربة" /></div><div class="field"><label>القسم</label><select id="newCat"></select></div><div class="field"><label>الأهمية</label><select id="newPriority"><option value="essential">أساسي</option><option value="recommended">مهم</option><option value="optional">اختياري</option></select></div><div class="field"><label>الكمية</label><input id="newQty" type="number" min="1" value="1" /></div><div class="field"><label>الوحدة</label><input id="newUnit" value="قطعة" /></div><div class="field full"><label>ملاحظة</label><textarea id="newNote"></textarea></div></div><div class="modal-actions"><button class="save" id="saveNew">إضافة</button><button class="cancel" id="cancelNew">إلغاء</button></div></div></div>
-<div class="modal-wrap" id="helpModal"><div class="modal"><div class="handle"></div><h3>BabyReady V3.4</h3><div style="font-size:12px;color:var(--muted);line-height:1.9">القائمة تدعم الآن عدة خيارات لكل غرض: أضف 3 أو 4 منتجات للسرير أو العربة أو أي بند، قارنها واختر النهائي لاحقًا. كذلك تدعم حالات شراء <b>مطلوب / تم الطلب / تم الاستلام</b>، مفضلة، صور منتجات، روابط شراء، سعر وميزانية، موعد شراء، فرز بالأولوية والتاريخ، لوحة رئيسية، ونسخة احتياطية تشمل الصور. كل التغييرات تحفظ محليًا، ويمكن ربط التطبيق بملف Google Sheet خاص لمزامنتها بين أجهزتك والأشخاص الذين تمنحهم رمز العائلة.</div><div class="modal-actions"><button class="save" id="closeHelp">تمام</button></div></div></div>
+<div class="modal-wrap" id="helpModal"><div class="modal"><div class="handle"></div><h3>BabyReady V3.5</h3><div style="font-size:12px;color:var(--muted);line-height:1.9">القائمة تدعم الآن عدة خيارات لكل غرض: أضف 3 أو 4 منتجات للسرير أو العربة أو أي بند، قارنها واختر النهائي لاحقًا. كذلك تدعم حالات شراء <b>مطلوب / تم الطلب / تم الاستلام</b>، مفضلة، صور منتجات، روابط شراء، سعر وميزانية، موعد شراء، فرز بالأولوية والتاريخ، لوحة رئيسية، ونسخة احتياطية تشمل الصور. كل التغييرات تحفظ محليًا، ويمكن ربط التطبيق بملف Google Sheet خاص لمزامنتها بين أجهزتك والأشخاص الذين تمنحهم رمز العائلة.</div><div class="modal-actions"><button class="save" id="closeHelp">تمام</button></div></div></div>
+<div class="modal-wrap" id="quickChoices" aria-hidden="true"><div class="modal quick-choice-modal"><div class="handle"></div><div class="quick-head"><h3>إضافة جديدة</h3><button class="quick-close" data-close-quick type="button" aria-label="إغلاق">✕</button></div>
+<button class="quick-choice" type="button" data-quick-mode="store"><span class="choice-icon">📷</span><span><b>منتج من محل</b><small>صوّره واحفظ السعر واسم المتجر</small></span><span>‹</span></button>
+<button class="quick-choice" type="button" data-quick-mode="online"><span class="choice-icon">🔗</span><span><b>منتج من الإنترنت</b><small>سجّل المنتج ورابطه لمقارنته لاحقًا</small></span><span>‹</span></button>
+<button class="quick-choice" type="button" data-quick-mode="item"><span class="choice-icon">☑️</span><span><b>بند جديد للقائمة</b><small>احتياج جديد غير موجود بالقائمة</small></span><span>‹</span></button></div></div>
+<div class="modal-wrap" id="quickProduct" aria-hidden="true"><div class="modal quick-product-modal"><div class="handle"></div><div class="quick-head"><h3 id="quickProductTitle">منتج من محل</h3><button class="quick-close" data-close-quick type="button" aria-label="إغلاق">✕</button></div>
+<div class="photo-zone" id="photoZone"><div id="quickPhotoEmpty"><span class="photo-icon">📸</span><b>أضف صورة المنتج</b><small>صور المنتج في المحل أو اختر صورة محفوظة</small></div><img id="quickPhotoPreview" alt="معاينة الصورة" hidden></div>
+<div class="photo-actions"><button type="button" id="quickCameraBtn">📷 تصوير</button><button type="button" id="quickGalleryBtn">▧ الألبوم</button><button type="button" id="quickRemovePhoto" hidden>حذف الصورة</button></div>
+<input type="file" id="quickCameraInput" accept="image/*" capture="environment" hidden><input type="file" id="quickGalleryInput" accept="image/*" hidden>
+<div class="quick-form"><label>القسم <select id="quickCat"></select></label><label>البند الذي يتبعه المنتج <select id="quickParent"></select></label>
+<label class="quick-new-parent" id="quickNewParentWrap" hidden>اسم البند الجديد <input id="quickNewParent" placeholder="مثال: كرسي سيارة إضافي"></label>
+<label>اسم المنتج / الموديل <input id="quickName" placeholder="مثال: عربة Joie"></label><div class="quick-two"><label>السعر (ر.س) <input id="quickPrice" type="number" inputmode="decimal" min="0" step="0.01" placeholder="اختياري"></label><label>المتجر <input id="quickMerchant" placeholder="اسم المحل"></label></div>
+<label>الحالة <select id="quickStatus"><option value="need">للمقارنة / مطلوب</option><option value="ordered">تم الطلب</option><option value="received">تم الاستلام</option><option value="hold">مؤجل</option></select></label>
+<details class="quick-extra"><summary>تفاصيل إضافية (اختياري)</summary><label>رابط المنتج <input id="quickUrl" type="url" inputmode="url" placeholder="https://..."></label><label>ملاحظة <textarea id="quickNote" placeholder="المقاس، اللون، الضمان، سبب الإعجاب"></textarea></label><label>الكمية المستهدفة <input id="quickQty" type="number" min="1" value="1"></label><label>الأهمية <select id="quickPriority"><option value="recommended">مهم</option><option value="essential">أساسي</option><option value="optional">اختياري</option></select></label></details></div>
+<div class="quick-bottom"><button type="button" id="quickSaveBtn">حفظ المنتج</button><button type="button" data-close-quick>إلغاء</button></div><small class="quick-notice">يُحفظ كخيار تحت البند، ولا يعتبر مشتَرًى إلا عند اختيار حالة الشراء المناسبة.</small></div></div>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -174,7 +226,7 @@ let syncPushTimer=null,syncPollTimer=null,syncApplyingRemote=false,syncBusy=fals
 function defaultItem(it){return {status:'need',owned:0,target:it.qty||1,price:'',url:it.url||'',comment:'',favorite:false,merchant:'',buyDate:'',buyPriority:it.priority==='essential'?'urgent':it.priority==='recommended'?'soon':'normal',imageUrl:'',alternatives:[],selectedAltId:'',updatedAt:''}}
 function defaults(){const x={version:3,profile:{babyName:'',dueDate:'',budgetTarget:'',globalNote:''},items:{},custom:[],meta:{createdAt:new Date().toISOString(),lastSaved:''}}; BASE.items.forEach(it=>x.items[it.id]=defaultItem(it)); return x}
 function migrateV1(v){const n=defaults(); n.profile={...n.profile,...(v.profile||{})}; n.custom=v.custom||[]; [...BASE.items,...n.custom].forEach(it=>{const old=(v.items||{})[it.id]; if(!old)return; const s=defaultItem(it); s.owned=Number(old.owned||0); s.target=Number(old.target||it.qty||1); s.price=old.price||''; s.url=old.url||it.url||''; s.comment=old.comment||''; s.status=old.done||old.status==='bought'?'received':old.status==='ordered'?'ordered':'need'; n.items[it.id]={...s}}); return n}
-function load(){state=defaults(); try{const raw=localStorage.getItem(KEY); if(raw){state={...state,...JSON.parse(raw)}; state.profile={...defaults().profile,...(state.profile||{})}; state.meta={...defaults().meta,...(state.meta||{})};}else{const old=localStorage.getItem(OLD_KEY); if(old){state=migrateV1(JSON.parse(old));}}}catch(e){showStorageWarning()} state.version=3; try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){} try{const th=localStorage.getItem(THEME_KEY); if(th)document.documentElement.dataset.theme=th}catch(e){}}
+function load(){state=defaults(); try{const raw=localStorage.getItem(KEY);if(raw&&!localStorage.getItem('babyready_v34_snapshot_before_v35')){try{localStorage.setItem('babyready_v34_snapshot_before_v35',raw)}catch(e){}} if(raw){state={...state,...JSON.parse(raw)}; state.profile={...defaults().profile,...(state.profile||{})}; state.meta={...defaults().meta,...(state.meta||{})};}else{const old=localStorage.getItem(OLD_KEY); if(old){state=migrateV1(JSON.parse(old));}}}catch(e){showStorageWarning()} state.version=3; try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){} try{const th=localStorage.getItem(THEME_KEY); if(th)document.documentElement.dataset.theme=th}catch(e){}}
 function save(render=true){state.meta.lastSaved=new Date().toISOString(); try{localStorage.setItem(KEY,JSON.stringify(state)); document.getElementById('saveState').textContent=syncCfg.connected?'تم الحفظ محليًا • جاري المزامنة':'تم الحفظ الآن على الجهاز'}catch(e){showStorageWarning()} if(!syncApplyingRemote)scheduleSyncPush(); if(render)updateAll()}
 function showStorageWarning(){const e=document.getElementById('saveState');if(e)e.textContent='الحفظ التلقائي غير متاح هنا — استخدم النسخة الاحتياطية'}
 function allItems(){return [...BASE.items,...(state.custom||[])]}
@@ -196,7 +248,7 @@ async function dbDel(k){const d=await db();if(!d)return;await new Promise(r=>{co
 async function getAllImages(){const d=await db();if(!d)return{};return new Promise(r=>{const out={};const req=d.transaction(DB_STORE,'readonly').objectStore(DB_STORE).openCursor();req.onsuccess=e=>{const c=e.target.result;if(c){out[c.key]=c.value;c.continue()}else r(out)};req.onerror=()=>r(out)})}
 async function restoreImages(imgs){const d=await db();if(!d)return;await new Promise(r=>{const tx=d.transaction(DB_STORE,'readwrite'),s=tx.objectStore(DB_STORE);s.clear();Object.entries(imgs||{}).forEach(([k,v])=>s.put(v,k));tx.oncomplete=r;tx.onerror=r})}
 async function resizeImage(file){return new Promise((res,rej)=>{const fr=new FileReader();fr.onload=()=>{const im=new Image();im.onload=()=>{const make=(max,q)=>{const scale=Math.min(1,max/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.max(1,Math.round(im.width*scale));c.height=Math.max(1,Math.round(im.height*scale));c.getContext('2d').drawImage(im,0,0,c.width,c.height);return c.toDataURL('image/jpeg',q)};let out=make(720,.72);if(out.length>600000)out=make(560,.60);res(out)};im.onerror=rej;im.src=fr.result};fr.onerror=rej;fr.readAsDataURL(file)})}
-async function hydrateImages(root=document){for(const img of root.querySelectorAll('img[data-img-id]')){const id=img.dataset.imgId,s=st(id);let src=s.imageUrl||'';if(!src)src=await dbGet(id)||'';const ph=img.parentElement.querySelector('.ph');img.classList.remove('ready');if(ph)ph.style.display='';if(!src)continue;img.onload=()=>{img.classList.add('ready');if(ph)ph.style.display='none'};img.onerror=()=>{img.classList.remove('ready');if(ph)ph.style.display='';img.removeAttribute('src')};img.src=src}}
+async function hydrateImages(root=document){for(const img of root.querySelectorAll('img[data-img-id]')){const id=img.dataset.imgId,s=st(id);let src=s.imageUrl||'';if(s.selectedAltId){const altphoto=await dbGet('opt:'+id+':'+s.selectedAltId);if(altphoto)src=altphoto}if(!src)src=await dbGet(id)||'';const ph=img.parentElement.querySelector('.ph');img.classList.remove('ready');if(ph)ph.style.display='';if(!src)continue;img.onload=()=>{img.classList.add('ready');if(ph)ph.style.display='none'};img.onerror=()=>{img.classList.remove('ready');if(ph)ph.style.display='';img.removeAttribute('src')};img.src=src}for(const img of root.querySelectorAll('img[data-option-img]')){const src=await dbGet(img.dataset.optionImg)||img.dataset.optionUrl||'';if(!src)continue;const ph=img.parentElement.querySelector('.ph');img.onload=()=>{img.classList.add('ready');if(ph)ph.style.display='none'};img.onerror=()=>{img.classList.remove('ready');if(ph)ph.style.display='';img.removeAttribute('src')};img.src=src}}
 
 
 
@@ -208,8 +260,8 @@ function fillSyncFields(){const u=document.getElementById('syncUrl'),c=document.
 function updateSyncStatus(mode,msg){const dot=document.getElementById('syncDot'),t=document.getElementById('syncTitle'),s=document.getElementById('syncSub'),r=document.getElementById('syncRev');if(!dot||!t||!s||!r)return;dot.className='sync-dot'+(mode?' '+mode:'');if(msg){t.textContent=msg}else if(syncBusy){dot.className='sync-dot busy';t.textContent='جاري المزامنة…'}else if(syncCfg.connected){dot.className='sync-dot on';t.textContent=syncCfg.dirty?'متصل • تحديث بانتظار الإرسال':'متصل ومشترك'}else{t.textContent='غير متصل'}s.textContent=syncCfg.lastSync?('آخر مزامنة: '+new Date(syncCfg.lastSync).toLocaleString('ar-SA')):(syncCfg.connected?'بانتظار أول مزامنة.':'البيانات محفوظة محليًا على هذا الجهاز.');r.textContent=syncCfg.revision?('Rev '+syncCfg.revision):'—'}
 function normalizeSyncUrl(u){u=String(u||'').trim();if(!/^https:\/\/script\.google\.com\/macros\/s\/.+\/exec(?:\?.*)?$/i.test(u))return '';return u.split('?')[0]}
 function jsonpSync(params,timeout=15000){return new Promise((resolve,reject)=>{if(!syncCfg.url)return reject(new Error('missing_url'));const cb='__brcb_'+Date.now()+'_'+Math.random().toString(36).slice(2);const q=new URLSearchParams({...params,callback:cb});const sc=document.createElement('script');let done=false;const clean=()=>{if(done)return;done=true;try{delete window[cb]}catch(e){};sc.remove()};const tm=setTimeout(()=>{clean();reject(new Error('timeout'))},timeout);window[cb]=data=>{clearTimeout(tm);clean();resolve(data)};sc.onerror=()=>{clearTimeout(tm);clean();reject(new Error('network'))};sc.src=syncCfg.url+'?'+q.toString();document.head.appendChild(sc)})}
-async function syncPull(manual=false){if(syncBusy||!syncCfg.url||!syncCfg.code)return;if(manual&&syncCfg.dirty){toast('يوجد تحديث محلي؛ سأرسله أولًا لحمايته.');await syncPush('pre_pull',true);return}syncBusy=true;let needsInitialPush=false;updateSyncStatus('busy','جاري جلب التحديثات…');try{const d=await jsonpSync({action:'read',code:syncCfg.code,deviceId:syncCfg.deviceId,deviceName:syncCfg.deviceName,clientVersion:'3.4'});if(!d||!d.ok){syncCfg.connected=false;saveSyncConfig();updateSyncStatus('err',d&&d.error==='unauthorized'?'رمز العائلة غير صحيح':'تعذر الاتصال');return}syncCfg.connected=true;const remoteRev=Number(d.revision||0);if(d.payload){if(remoteRev>Number(syncCfg.revision||0)||manual){const pack=JSON.parse(d.payload);if(pack&&pack.state){syncApplyingRemote=true;state={...defaults(),...pack.state,profile:{...defaults().profile,...(pack.state.profile||{})},meta:{...defaults().meta,...(pack.state.meta||{})}};state.version=3;await restoreImages(pack.images||{});try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}syncApplyingRemote=false;bindProfile();renderCurrent();updateAll()}}}else if(remoteRev===0){needsInitialPush=true}if(syncCfg.pendingPushBase!==undefined&&syncCfg.pendingPushBase!==null&&remoteRev>Number(syncCfg.pendingPushBase)){syncCfg.dirty=false;delete syncCfg.pendingPushBase;delete syncCfg.pendingPushAt}syncCfg.revision=remoteRev;syncCfg.lastSync=new Date().toISOString();saveSyncConfig();updateSyncStatus('on','متصل ومشترك')}catch(err){syncCfg.connected=false;saveSyncConfig();updateSyncStatus('err','تعذر الوصول للمزامنة')}finally{syncBusy=false;updateSyncStatus()}if(needsInitialPush){syncCfg.dirty=true;saveSyncConfig();await syncPush('initial_upload',true)}}
-async function syncPush(actionName='update',force=false){if(syncBusy||!syncCfg.url||!syncCfg.code)return;if(!force&&!syncCfg.dirty)return;syncBusy=true;updateSyncStatus('busy','جاري إرسال التحديث…');try{const images=await getAllImages();const payload=JSON.stringify({state,images});if(payload.length>22000000){syncBusy=false;updateSyncStatus('err','النسخة المشتركة كبيرة جدًا');toast('احذف بعض الصور المحلية أو استخدم روابط صور.');return}let frame=document.getElementById('brSyncFrame');if(!frame){frame=document.createElement('iframe');frame.id='brSyncFrame';frame.name='brSyncFrame';frame.style.display='none';document.body.appendChild(frame)}const form=document.createElement('form');form.method='POST';form.action=syncCfg.url;form.target='brSyncFrame';form.style.display='none';const fields={action:'write',code:syncCfg.code,deviceId:syncCfg.deviceId,deviceName:syncCfg.deviceName,clientVersion:'3.4',actionName,payload};Object.entries(fields).forEach(([k,v])=>{const i=document.createElement('input');i.type='hidden';i.name=k;i.value=String(v??'');form.appendChild(i)});document.body.appendChild(form);syncCfg.pendingPushBase=Number(syncCfg.revision||0);syncCfg.pendingPushAt=Date.now();syncCfg.connected=true;saveSyncConfig();form.submit();setTimeout(()=>form.remove(),1000);setTimeout(()=>{syncBusy=false;syncPull(false)},2200)}catch(err){syncCfg.connected=false;syncCfg.dirty=true;saveSyncConfig();syncBusy=false;updateSyncStatus('err','فشل إرسال التحديث')}}
+async function syncPull(manual=false){if(syncBusy||!syncCfg.url||!syncCfg.code)return;if(manual&&syncCfg.dirty){toast('يوجد تحديث محلي؛ سأرسله أولًا لحمايته.');await syncPush('pre_pull',true);return}syncBusy=true;let needsInitialPush=false;updateSyncStatus('busy','جاري جلب التحديثات…');try{const d=await jsonpSync({action:'read',code:syncCfg.code,deviceId:syncCfg.deviceId,deviceName:syncCfg.deviceName,clientVersion:'3.5'});if(!d||!d.ok){syncCfg.connected=false;saveSyncConfig();updateSyncStatus('err',d&&d.error==='unauthorized'?'رمز العائلة غير صحيح':'تعذر الاتصال');return}syncCfg.connected=true;const remoteRev=Number(d.revision||0);if(d.payload){if(remoteRev>Number(syncCfg.revision||0)||manual){const pack=JSON.parse(d.payload);if(pack&&pack.state){syncApplyingRemote=true;state={...defaults(),...pack.state,profile:{...defaults().profile,...(pack.state.profile||{})},meta:{...defaults().meta,...(pack.state.meta||{})}};state.version=3;await restoreImages(pack.images||{});try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}syncApplyingRemote=false;bindProfile();renderCurrent();updateAll()}}}else if(remoteRev===0){needsInitialPush=true}if(syncCfg.pendingPushBase!==undefined&&syncCfg.pendingPushBase!==null&&remoteRev>Number(syncCfg.pendingPushBase)){syncCfg.dirty=false;delete syncCfg.pendingPushBase;delete syncCfg.pendingPushAt}syncCfg.revision=remoteRev;syncCfg.lastSync=new Date().toISOString();saveSyncConfig();updateSyncStatus('on','متصل ومشترك')}catch(err){syncCfg.connected=false;saveSyncConfig();updateSyncStatus('err','تعذر الوصول للمزامنة')}finally{syncBusy=false;updateSyncStatus()}if(needsInitialPush){syncCfg.dirty=true;saveSyncConfig();await syncPush('initial_upload',true)}}
+async function syncPush(actionName='update',force=false){if(syncBusy||!syncCfg.url||!syncCfg.code)return;if(!force&&!syncCfg.dirty)return;syncBusy=true;updateSyncStatus('busy','جاري إرسال التحديث…');try{const images=await getAllImages();const payload=JSON.stringify({state,images});if(payload.length>22000000){syncBusy=false;updateSyncStatus('err','النسخة المشتركة كبيرة جدًا');toast('احذف بعض الصور المحلية أو استخدم روابط صور.');return}let frame=document.getElementById('brSyncFrame');if(!frame){frame=document.createElement('iframe');frame.id='brSyncFrame';frame.name='brSyncFrame';frame.style.display='none';document.body.appendChild(frame)}const form=document.createElement('form');form.method='POST';form.action=syncCfg.url;form.target='brSyncFrame';form.style.display='none';const fields={action:'write',code:syncCfg.code,deviceId:syncCfg.deviceId,deviceName:syncCfg.deviceName,clientVersion:'3.5',actionName,payload};Object.entries(fields).forEach(([k,v])=>{const i=document.createElement('input');i.type='hidden';i.name=k;i.value=String(v??'');form.appendChild(i)});document.body.appendChild(form);syncCfg.pendingPushBase=Number(syncCfg.revision||0);syncCfg.pendingPushAt=Date.now();syncCfg.connected=true;saveSyncConfig();form.submit();setTimeout(()=>form.remove(),1000);setTimeout(()=>{syncBusy=false;syncPull(false)},2200)}catch(err){syncCfg.connected=false;syncCfg.dirty=true;saveSyncConfig();syncBusy=false;updateSyncStatus('err','فشل إرسال التحديث')}}
 function scheduleSyncPush(){if(!syncCfg.url||!syncCfg.code)return;syncCfg.dirty=true;saveSyncConfig();clearTimeout(syncPushTimer);syncPushTimer=setTimeout(()=>syncPush('auto_save'),1100);updateSyncStatus()}
 function startSyncPolling(){clearInterval(syncPollTimer);if(syncCfg.url&&syncCfg.code){syncPollTimer=setInterval(()=>{if(!document.hidden&&!syncBusy&&!syncCfg.dirty)syncPull(false)},10000)}}
 function syncOnReturn(){if(syncCfg.url&&syncCfg.code&&!syncBusy&&!syncCfg.dirty)syncPull(false)}
@@ -221,23 +273,24 @@ function sortItems(items){const p={essential:0,recommended:1,optional:2},bp={urg
 function alternativesOf(s){return Array.isArray(s.alternatives)?s.alternatives:[]}
 function selectedAlternative(s){return alternativesOf(s).find(a=>a.id===s.selectedAltId)||null}
 function syncAlternative(s,a){s.selectedAltId=a.id;s.price=a.price||'';s.url=a.url||'';s.merchant=a.merchant||'';s.imageUrl=a.imageUrl||'';s.updatedAt=new Date().toISOString()}
-function alternativesHTML(s){
+function alternativesHTML(s,itemId){
   const arr=alternativesOf(s);
   if(!arr.length)return '<div class="options-empty">ما أضفت خيارات بعد. اضغط «＋ إضافة خيار» وحط كل المنتجات اللي تفكر فيها، وبعدها اختر واحد منها وقت ما تقرر.</div>';
   return `<div class="alt-list">${arr.map((a,idx)=>`<div class="alt-card ${s.selectedAltId===a.id?'selected':''}" data-alt-id="${esc(a.id)}">
     <div class="alt-card-head"><span class="alt-index">خيار ${idx+1}</span>${s.selectedAltId===a.id?'<span class="alt-selected">✓ المختار حاليًا</span>':''}</div>
-    <div class="alt-grid">
+    <div class="alt-summary"><div class="alt-photo"><span class="ph">📷</span><img data-option-img="opt:${esc(itemId)}:${esc(a.id)}" data-option-url="${esc(a.imageUrl||'')}" alt=""></div><div class="alt-overview"><b>${esc(a.name||'منتج بدون اسم')}</b><small>${esc(a.merchant||'')}${a.price?' • '+money(a.price):''}</small></div></div>
+    <details class="alt-edit"><summary>تعديل اسم المنتج والسعر وباقي التفاصيل</summary><div class="alt-grid">
       <div class="full"><label>اسم المنتج / الموديل</label><input data-alt-field="name" value="${esc(a.name||'')}" placeholder="مثال: سرير Next2Me"></div>
       <div><label>السعر (ر.س)</label><input data-alt-field="price" value="${esc(a.price||'')}" inputmode="decimal" placeholder="0"></div>
       <div><label>المتجر</label><input data-alt-field="merchant" value="${esc(a.merchant||'')}" placeholder="مثال: Amazon.sa"></div>
       <div class="full"><label>رابط المنتج</label><input data-alt-field="url" value="${esc(a.url||'')}" placeholder="https://..."></div>
       <div class="full"><label>رابط الصورة (اختياري)</label><input data-alt-field="imageUrl" value="${esc(a.imageUrl||'')}" placeholder="https://...jpg"></div>
       <div class="full"><label>ملاحظتك عن هذا الخيار</label><textarea data-alt-field="note" placeholder="ليش عجبك؟ الضمان، المقاس، المميزات...">${esc(a.note||'')}</textarea></div>
-    </div>
+    </div></details>
     <div class="alt-actions">
       <button type="button" class="alt-choose" data-alt-act="choose">${s.selectedAltId===a.id?'مختار ✓':'اختيار هذا'}</button>
       <button type="button" class="alt-open" data-alt-act="open" ${a.url?'':'disabled'}>فتح الرابط</button>
-      <button type="button" class="alt-delete" data-alt-act="delete">حذف الخيار</button>
+      <button type="button" class="alt-open" data-alt-act="photo">📷 تصوير/صورة</button><input type="file" data-alt-image-input accept="image/*" hidden><button type="button" class="alt-delete" data-alt-act="delete">حذف الخيار</button>
     </div>
   </div>`).join('')}</div>`;
 }
@@ -250,18 +303,18 @@ function itemHTML(it){
 <div class="item-detail">${it.note?`<div class="note">💡 ${esc(it.note)}</div>`:''}${it.suggestion?`<div class="suggestion">⭐ <b>مرشح:</b> ${esc(it.suggestion)}</div>`:''}
 <div class="options-box">
   <div class="options-head"><div><b>خيارات المنتجات</b><small>أضف أكثر من منتج لنفس الغرض واختر النهائي لاحقًا.</small></div><button type="button" class="options-add" data-act="addAlternative">＋ إضافة خيار</button></div>
-  ${alternativesHTML(s)}
+  ${alternativesHTML(s,it.id)}
   <div class="options-tip">أضف الخيارات وقارنها، ثم «اختيار هذا». بعد الشراء غيّر الحالة إلى «تم الطلب»، وبعد وصوله إلى «تم الاستلام». كل المؤشرات والميزانية تتحدث تلقائيًا.</div>
 </div>
 ${sel?`<div class="selected-summary">✓ المنتج المختار حاليًا: <b>${esc(sel.name||'بدون اسم')}</b>${sel.merchant?` • ${esc(sel.merchant)}`:''}${sel.price?` • ${money(sel.price)}`:''}</div>`:''}
-<div class="form-grid"><div class="field"><label>الكمية المستهدفة</label><div class="qty"><button data-act="targetPlus">＋</button><input data-field="target" value="${s.target}" inputmode="numeric"><button data-act="targetMinus">−</button></div></div><div class="field"><label>تم استلام</label><div class="qty"><button data-act="ownedPlus">＋</button><input data-field="owned" value="${s.owned}" inputmode="numeric"><button data-act="ownedMinus">−</button></div></div>
+<details class="extra-item"><summary>تفاصيل إضافية: الكمية والسعر والملاحظات <span>⌄</span></summary><div class="form-grid"><div class="field"><label>الكمية المستهدفة</label><div class="qty"><button data-act="targetPlus">＋</button><input data-field="target" value="${s.target}" inputmode="numeric"><button data-act="targetMinus">−</button></div></div><div class="field"><label>تم استلام</label><div class="qty"><button data-act="ownedPlus">＋</button><input data-field="owned" value="${s.owned}" inputmode="numeric"><button data-act="ownedMinus">−</button></div></div>
 <div class="field"><label>سعر المنتج النهائي (ر.س)</label><input data-field="price" value="${esc(s.price)}" inputmode="decimal" placeholder="0"></div><div class="field"><label>أولوية الشراء</label><select data-field="buyPriority"><option value="urgent" ${s.buyPriority==='urgent'?'selected':''}>عاجل</option><option value="soon" ${s.buyPriority==='soon'?'selected':''}>قريبًا</option><option value="normal" ${s.buyPriority==='normal'?'selected':''}>عادي</option><option value="later" ${s.buyPriority==='later'?'selected':''}>لاحقًا</option></select></div>
 <div class="field"><label>موعد الشراء المخطط</label><input data-field="buyDate" type="date" value="${esc(s.buyDate)}"></div><div class="field"><label>المتجر / البائع النهائي</label><input data-field="merchant" value="${esc(s.merchant)}" placeholder="مثال: جرير"></div>
 <div class="field full"><label>رابط المنتج النهائي</label><div class="linkbox"><input data-field="url" value="${esc(s.url)}" placeholder="https://..."><button class="open-btn" data-act="buy">فتح</button></div></div><div class="field full"><label>رابط صورة المنتج النهائي (اختياري)</label><input data-field="imageUrl" value="${esc(s.imageUrl)}" placeholder="https://...jpg"></div>
-<div class="field full"><label>صورة من جهازك</label><div class="image-tools"><button class="soft-btn" data-act="uploadImage">＋ اختيار صورة</button><button class="soft-btn" data-act="removeImage">حذف الصورة</button><input type="file" accept="image/*" data-image-input hidden></div></div><div class="field full"><label>تعليقك العام</label><textarea data-field="comment" placeholder="اللون، المقاس، الضمان، سبب الاختيار...">${esc(s.comment)}</textarea></div></div>${isCustom?'<button class="danger-btn" data-act="deleteCustom">حذف هذا البند المخصص</button>':''}</div></div>`;
+<div class="field full"><label>صورة من جهازك</label><div class="image-tools"><button class="soft-btn" data-act="uploadImage">＋ اختيار صورة</button><button class="soft-btn" data-act="removeImage">حذف الصورة</button><input type="file" accept="image/*" data-image-input hidden></div></div><div class="field full"><label>تعليقك العام</label><textarea data-field="comment" placeholder="اللون، المقاس، الضمان، سبب الاختيار...">${esc(s.comment)}</textarea></div></div>${isCustom?'<button class="danger-btn" data-act="deleteCustom">حذف هذا البند المخصص</button>':''}</details></div></div>`;
 }
 
-function renderChecklist(){const holder=document.getElementById('categories');holder.innerHTML='';let visible=0;for(const c of BASE.categories){let list=sortItems(allItems().filter(i=>i.cat===c.id&&matches(i)));if(!list.length)continue;visible+=list.length;const recv=list.filter(i=>st(i.id).status==='received').length;const el=document.createElement('div');el.className='category open';el.innerHTML=`<button class="cat-head"><div class="cat-icon">${c.icon}</div><div class="cat-meta"><div class="cat-title">${c.name}</div><div class="cat-desc">${c.desc}</div></div><div class="cat-count"><b>${recv}/${list.length}</b>مستلم</div><span class="chev">⌄</span></button><div class="cat-progress"><i style="width:${list.length?Math.round(recv/list.length*100):0}%"></i></div><div class="cat-body">${list.map(itemHTML).join('')}</div>`;holder.appendChild(el)}document.getElementById('visibleCount').textContent=`${visible} بند ظاهر`;if(!visible)holder.innerHTML='<div class="empty">لا توجد نتائج مطابقة.</div>';bindItems(holder);hydrateImages(holder)}
+function renderChecklist(){const holder=document.getElementById('categories');const openCats=new Set([...holder.querySelectorAll('.category.open[data-cat]')].map(x=>x.dataset.cat));const openExtras=new Set([...holder.querySelectorAll('details.extra-item[open],details.alt-edit[open]')].map(x=>{const item=x.closest('.item');const alt=x.closest('.alt-card');return(item?.dataset.id||'')+':'+(alt?.dataset.altId||'extra')}));holder.innerHTML='';let visible=0;for(const c of BASE.categories){let list=sortItems(allItems().filter(i=>i.cat===c.id&&matches(i)));if(!list.length)continue;visible+=list.length;const recv=list.filter(i=>st(i.id).status==='received').length;const el=document.createElement('div');el.className='category'+((openCats.has(c.id)||(expandedItem&&list.some(i=>i.id===expandedItem))||searchText.trim())?' open':'');el.dataset.cat=c.id;el.innerHTML=`<button class="cat-head"><div class="cat-icon">${c.icon}</div><div class="cat-meta"><div class="cat-title">${c.name}</div><div class="cat-desc">${c.desc}</div></div><div class="cat-count"><b>${recv}/${list.length}</b>مستلم</div><span class="chev">⌄</span></button><div class="cat-progress"><i style="width:${list.length?Math.round(recv/list.length*100):0}%"></i></div><div class="cat-body">${list.map(itemHTML).join('')}</div>`;holder.appendChild(el)}document.getElementById('visibleCount').textContent=`${visible} بند ظاهر`;if(!visible)holder.innerHTML='<div class="empty">لا توجد نتائج مطابقة.</div>';bindItems(holder);holder.querySelectorAll('details.extra-item,details.alt-edit').forEach(x=>{const item=x.closest('.item'),alt=x.closest('.alt-card');if(openExtras.has((item?.dataset.id||'')+':'+(alt?.dataset.altId||'extra')))x.open=true});hydrateImages(holder)}
 
 
 let checklistRefreshTimer=null;
@@ -295,7 +348,7 @@ function bindItems(root=document){
       if(a==='ownedMinus'){s.owned=Math.max(0,Number(s.owned)-1);reconcileItemQty(s)}
       if(a==='uploadImage'){el.querySelector('[data-image-input]').click();return}
       if(a==='removeImage'){s.imageUrl='';await dbDel(id);touchItem(s);save(false);refreshOperationalIndicators();renderChecklist();return}
-      if(a==='deleteCustom'){if(confirm('حذف هذا البند المخصص وكل بياناته؟')){state.custom=state.custom.filter(x=>x.id!==id);delete state.items[id];expandedItem=null;await dbDel(id);save(false);refreshOperationalIndicators();renderChecklist();toast('تم حذف البند')}return}
+      if(a==='deleteCustom'){if(confirm('حذف هذا البند المخصص وكل بياناته؟')){state.custom=state.custom.filter(x=>x.id!==id);delete state.items[id];expandedItem=null;await dbDel(id);for(const a of s.alternatives||[])await dbDel('opt:'+id+':'+a.id);save(false);refreshOperationalIndicators();renderChecklist();toast('تم حذف البند')}return}
       touchItem(s);save(false);refreshOperationalIndicators();renderChecklist();
     });
 
@@ -307,16 +360,18 @@ function bindItems(root=document){
       });
       card.querySelectorAll('[data-alt-act]').forEach(btn=>btn.onclick=e=>{
         e.preventDefault();e.stopPropagation();const act=btn.dataset.altAct;
-        if(act==='choose'){syncAlternative(s,alt);touchItem(s);save(false);refreshOperationalIndicators();renderChecklist();toast('تم اختيار هذا المنتج');return}
+        if(act==='photo'){card.querySelector('[data-alt-image-input]').click();return}
+         if(act==='choose'){syncAlternative(s,alt);touchItem(s);save(false);refreshOperationalIndicators();renderChecklist();toast('تم اختيار هذا المنتج');return}
         if(act==='open'){safeOpen(alt.url);return}
         if(act==='delete'){
           const ok=altIsBlank(alt)||confirm('حذف هذا الخيار؟');if(!ok)return;
           const wasSelected=s.selectedAltId===alt.id;
           if(wasSelected){s.selectedAltId='';s.price='';s.url='';s.merchant='';s.imageUrl=''}
-          s.alternatives=alternativesOf(s).filter(x=>x.id!==alt.id);
+          s.alternatives=alternativesOf(s).filter(x=>x.id!==alt.id);dbDel('opt:'+id+':'+aid);
           touchItem(s);save(false);refreshOperationalIndicators();renderChecklist();toast(wasSelected?'تم حذف الخيار المختار ومسح بياناته النهائية':'تم حذف الخيار');return;
         }
       });
+      const altImgInput=card.querySelector('[data-alt-image-input]');if(altImgInput)altImgInput.onchange=async()=>{const f=altImgInput.files&&altImgInput.files[0];if(!f)return;try{const data=await resizeImage(f);await dbSet('opt:'+id+':'+aid,data);touchItem(s);save(false);refreshOperationalIndicators();renderChecklist();toast('تم حفظ صورة هذا الخيار')}catch(e){toast('تعذر حفظ الصورة')}};
     });
 
     const fi=el.querySelector('[data-image-input]');
@@ -365,4 +420,173 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 
+<script>(function previewEnhancer(){
+  'use strict';
+  let photoBuffer=null,mode='store',saving=false;
+  const $=id=>document.getElementById(id);
+  const choices=$('quickChoices'),sheet=$('quickProduct');
+  function closeAll(){choices.classList.remove('show');sheet.classList.remove('show');choices.setAttribute('aria-hidden','true');sheet.setAttribute('aria-hidden','true')}
+  function openChoices(){sheet.classList.remove('show');choices.classList.add('show');choices.setAttribute('aria-hidden','false')}
+  function populateParents(){
+    const cat=$('quickCat').value,sel=$('quickParent'),current=sel.value;
+    sel.innerHTML='<option value="">اختر البند من القائمة</option>'+allItems().filter(i=>i.cat===cat).map(i=>'<option value="'+esc(i.id)+'">'+esc(i.name)+'</option>').join('')+'<option value="__new__">＋ إنشاء بند جديد</option>';
+    sel.value=[...sel.options].some(x=>x.value===current)?current:'';
+    showNewParent();
+  }
+  function showNewParent(){
+    const yes=$('quickParent').value==='__new__'||mode==='item';
+    $('quickNewParentWrap').hidden=!yes;
+    if(mode==='item')$('quickParent').value='__new__';
+  }
+  function reset(){
+    photoBuffer=null;$('quickPhotoPreview').removeAttribute('src');$('quickPhotoPreview').hidden=true;$('quickPhotoEmpty').hidden=false;$('quickRemovePhoto').hidden=true;
+    ['quickName','quickPrice','quickMerchant','quickUrl','quickNote','quickNewParent'].forEach(id=>$(id).value='');
+    $('quickStatus').value='need';$('quickQty').value='1';$('quickPriority').value='recommended';$('quickCat').value=BASE.categories[0].id;
+    $('quickCameraInput').value='';$('quickGalleryInput').value='';
+    sheet.querySelector('.quick-extra').open=false;
+    populateParents();
+  }
+  function openForm(nextMode){
+    closeAll();mode=nextMode;reset();
+    $('quickProductTitle').textContent=mode==='store'?'منتج من محل':mode==='online'?'منتج من الإنترنت':'بند جديد للقائمة';
+    sheet.classList.add('show');sheet.setAttribute('aria-hidden','false');
+    if(mode==='item'){
+      $('quickParent').value='__new__';showNewParent();
+      $('quickProductTitle').textContent='إضافة بند أو منتج جديد';
+      $('quickName').placeholder='مثال: مرتبة إضافية';
+    }else{$('quickName').placeholder='مثال: Joie Finiti'}
+    $('quickMerchant').placeholder=mode==='store'?'اسم المحل':'المتجر / الموقع';
+  }
+  async function selectPhoto(file){
+    if(!file)return;
+    if(!file.type.startsWith('image/'))return toast('اختر ملف صورة');
+    try{
+      photoBuffer=await resizeImage(file);
+      $('quickPhotoPreview').src=photoBuffer;
+      $('quickPhotoPreview').hidden=false;$('quickPhotoEmpty').hidden=true;$('quickRemovePhoto').hidden=false;
+    }catch(e){toast('تعذر قراءة الصورة. جرّب صورة أخرى')}
+  }
+  async function saveProduct(){
+    if(saving)return;
+    const parent=$('quickParent').value,newParent=parent==='__new__',name=$('quickName').value.trim(),parentName=$('quickNewParent').value.trim(),cat=$('quickCat').value;
+    if(!parent)return toast('اختر بندًا من القائمة أو أنشئ بندًا جديدًا');
+    if(newParent&&!parentName&&mode==='item'&&!name)return toast('اكتب اسم البند الجديد');
+    if(!newParent&&!name)return toast('اكتب اسم المنتج');
+    if(newParent&&!parentName&&!name)return toast('اكتب اسم المنتج أو البند');
+    if(!BASE.categories.some(c=>c.id===cat))return toast('اختر قسمًا صحيحًا');
+    const pVal=$('quickPrice').value.trim();
+    if(pVal&&(!Number.isFinite(Number(pVal))||Number(pVal)<0))return toast('السعر غير صحيح');
+    let item=parent&&parent!=='__new__'?itemDef(parent):null;
+    if(!newParent&&!item)return toast('البند غير موجود، اختره من جديد');
+    saving=true;$('quickSaveBtn').disabled=true;
+    try{
+      if(newParent){
+        item={id:'custom-'+Date.now()+'-'+Math.random().toString(36).slice(2,7),cat,name:parentName||name,qty:Math.max(1,parseInt($('quickQty').value,10)||1),priority:$('quickPriority').value,timeline:'before',note:'',unit:'قطعة',url:'',suggestion:'',custom:true};
+        state.custom.push(item);state.items[item.id]=defaultItem(item);
+      }
+      const s=st(item.id);
+      const alt={id:'opt-'+Date.now()+'-'+Math.random().toString(36).slice(2,8),name:name||parentName,price:pVal,merchant:$('quickMerchant').value.trim(),url:$('quickUrl').value.trim(),imageUrl:'',note:$('quickNote').value.trim(),source:mode==='store'?'store':mode==='online'?'online':'manual'};
+      s.alternatives.push(alt);
+      if(photoBuffer)await dbSet('opt:'+item.id+':'+alt.id,photoBuffer);
+      const next=$('quickStatus').value;
+      if(!s.selectedAltId||next==='ordered'||next==='received')syncAlternative(s,alt);
+      if(next!=='need')applyItemStatus(s,next);
+      touchItem(s);save(false);
+      updateAll();closeAll();expandedItem=item.id;
+      searchText='';$('search').value='';filter='all';priorityFilter='all';$('priorityFilter').value='all';filterChips();catFilter=item.cat;$('catFilter').value=catFilter;
+      showPanel('checklistPanel');toast('تم حفظ المنتج بنجاح ✓');
+      setTimeout(()=>document.querySelector('.item[data-id="'+CSS.escape(item.id)+'"]')?.scrollIntoView({behavior:'smooth',block:'center'}),150);
+    }catch(err){toast('تعذر الحفظ، حاول مرة أخرى')}finally{saving=false;$('quickSaveBtn').disabled=false}
+  }
+  /* Non-destructive, opt-in import of edits entered in the separately installed UX preview. */
+async function importV35PreviewSafely(){
+  const raw=localStorage.getItem('babyready_preview_v35');
+  if(!raw)return toast('لا توجد بيانات تجريبية على هذا الجهاز');
+  let incoming;
+  try{incoming=JSON.parse(raw);if(!incoming||!incoming.items||!Array.isArray(incoming.custom))throw 0}
+  catch(e){return toast('تعذر قراءة نسخة التجربة')};
+  const touched=Object.entries(incoming.items).filter(([id,x])=>x&&(x.updatedAt||(x.alternatives||[]).length>0));
+  if(!touched.length&&!incoming.custom.length)return toast('نسخة التجربة لا تحتوي على إضافات');
+  if(!confirm('سيتم دمج الإضافات والخيارات الموجودة في نسخة التجربة مع الاحتفاظ ببياناتك الحالية. لن نحذف أي شيء من النسختين. هل تريد المتابعة؟'))return;
+  const backupKey='babyready_before_preview_merge_v35';
+  try{if(!localStorage.getItem(backupKey))localStorage.setItem(backupKey,JSON.stringify(state))}
+  catch(e){return toast('تعذر حفظ نسخة أمان، تم إلغاء الدمج لحماية بياناتك')};
+  const existing=new Set(allItems().map(x=>x.id));
+  let newItems=0,newOptions=0,updated=0,photos=0;
+  for(const item of incoming.custom){
+    if(!item||typeof item.id!=='string'||typeof item.name!=='string'||!BASE.categories.some(c=>c.id===item.cat))continue;
+    if(!existing.has(item.id)){state.custom.push(item);state.items[item.id]=defaultItem(item);existing.add(item.id);newItems++}
+  }
+  for(const [id,previewState] of touched){
+    const definition=itemDef(id);if(!definition)continue;
+    const live=st(id),d=defaultItem(definition);
+    const liveHasEdits=!!live.updatedAt||['status','owned','target','price','url','comment','favorite','merchant','buyDate','buyPriority','imageUrl','selectedAltId'].some(k=>JSON.stringify(live[k])!==JSON.stringify(d[k]));
+    const before=new Set(live.alternatives.map(a=>a.id));
+    for(const a of previewState.alternatives||[]){
+      if(!a||typeof a.id!=='string'||before.has(a.id))continue;
+      live.alternatives.push({...a});before.add(a.id);newOptions++;
+    }
+    if(!liveHasEdits){
+      for(const k of Object.keys(d))if(k!=='alternatives'&&Object.prototype.hasOwnProperty.call(previewState,k))live[k]=previewState[k];
+      updated++;
+    }
+    touchItem(live);
+  }
+  const profile=incoming.profile||{};
+  for(const k of ['babyName','dueDate','budgetTarget','globalNote'])if(!state.profile[k]&&profile[k])state.profile[k]=profile[k];
+  try{
+    const previewImages=await new Promise(resolve=>{
+      if(!('indexedDB' in window))return resolve({});
+      const request=indexedDB.open('BabyReadyPreviewV35DB',1);
+      request.onerror=()=>resolve({});
+      request.onsuccess=()=>{
+        const db=request.result,out={};
+        if(!db.objectStoreNames.contains(DB_STORE)){db.close();return resolve(out)}
+        const cur=db.transaction(DB_STORE,'readonly').objectStore(DB_STORE).openCursor();
+        cur.onsuccess=e=>{const c=e.target.result;if(c){out[c.key]=c.value;c.continue()}else{db.close();resolve(out)}};
+        cur.onerror=()=>{db.close();resolve(out)};
+      };
+      request.onupgradeneeded=()=>{};
+    });
+    for(const [key,image] of Object.entries(previewImages)){
+      const parts=key.startsWith('opt:')?key.split(':'):null;
+      const valid=parts?!!(itemDef(parts[1])&&st(parts[1]).alternatives.some(a=>a.id===parts.slice(2).join(':'))):!!itemDef(key);
+      if(!valid||await dbGet(key))continue;
+      await dbSet(key,image);photos++;
+    }
+  }catch(e){/* Existing production images are never removed. */}
+  save(false);bindProfile();updateAll();renderCurrent();
+  toast('تم الدمج: '+newItems+' بنود، '+newOptions+' خيارات، '+photos+' صور');
+}
+function showPreviewImportIfAvailable(){
+  const node=document.getElementById('previewImportArea');if(!node)return;
+  try{
+    const raw=localStorage.getItem('babyready_preview_v35');
+    const p=raw&&JSON.parse(raw);
+    const meaningful=!!(p&&((p.custom||[]).length||Object.values(p.items||{}).some(s=>s&&(s.updatedAt||(s.alternatives||[]).length))));
+    node.hidden=!meaningful;
+    if(meaningful)document.getElementById('previewImportBtn').onclick=importV35PreviewSafely;
+  }catch(e){node.hidden=true}
+}
+
+function initPreview(){
+    $('quickCat').innerHTML=BASE.categories.map(c=>'<option value="'+esc(c.id)+'">'+esc(c.icon)+' '+esc(c.name)+'</option>').join('');
+    $('quickCat').addEventListener('change',populateParents);
+    $('quickParent').addEventListener('change',showNewParent);
+    $('quickAddFab').addEventListener('click',openChoices);
+    const oldAdd=$('addItemBtn');if(oldAdd)oldAdd.onclick=openChoices;
+    document.querySelectorAll('[data-preview-go]').forEach(b=>b.addEventListener('click',()=>showPanel(b.dataset.previewGo)));
+    document.querySelectorAll('[data-quick-mode]').forEach(b=>b.addEventListener('click',()=>openForm(b.dataset.quickMode)));
+    document.querySelectorAll('[data-close-quick]').forEach(b=>b.addEventListener('click',closeAll));
+    [choices,sheet].forEach(x=>x.addEventListener('click',e=>{if(e.target===x)closeAll()}));
+    $('quickCameraBtn').addEventListener('click',()=>$('quickCameraInput').click());
+    $('quickGalleryBtn').addEventListener('click',()=>$('quickGalleryInput').click());
+    $('quickCameraInput').addEventListener('change',e=>selectPhoto(e.target.files?.[0]));
+    $('quickGalleryInput').addEventListener('change',e=>selectPhoto(e.target.files?.[0]));
+    $('quickRemovePhoto').addEventListener('click',()=>{photoBuffer=null;$('quickPhotoPreview').hidden=true;$('quickPhotoPreview').removeAttribute('src');$('quickPhotoEmpty').hidden=false;$('quickRemovePhoto').hidden=true});
+    $('quickSaveBtn').addEventListener('click',saveProduct);
+    reset();showPreviewImportIfAvailable();
+  }
+  document.addEventListener('DOMContentLoaded',initPreview);
+})();</script>
 </body></html>
