@@ -78,6 +78,7 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}.container{width
 @media print{.topbar,.bottom-nav,.sticky-tools,.item-actions,.image-tools,.modal-wrap,.toast,.top-actions{display:none!important}body{padding:0;background:white;color:black}.panel{display:block!important}.category{box-shadow:none;break-inside:avoid}.cat-body{display:block!important}.item-detail{display:none!important}.hero{background:white;color:black;border:1px solid #ddd;box-shadow:none}.ring{display:none}.fav-grid{display:none}.settings{box-shadow:none}}
 
 /* BabyReady V3.5 UX Preview – isolated from production */
+[hidden]{display:none!important}
 body{padding-bottom:calc(110px + var(--safe-bottom));font-size:14px}
 .topbar-inner{height:60px}.brand h1{font-size:17px}.brand small{font-size:11px}
 .page-head{padding:17px 0 12px}.page-head h2{font-size:23px}.page-head p{font-size:12px}
@@ -368,8 +369,7 @@ function bindItems(root=document){
           touchItem(s);save(false);refreshOperationalIndicators();renderChecklist();toast(wasSelected?'تم حذف الخيار المختار ومسح بياناته النهائية':'تم حذف الخيار');return;
         }
       });
-    });
-    const altImgInput=card.querySelector('[data-alt-image-input]');if(altImgInput)altImgInput.onchange=async()=>{const f=altImgInput.files&&altImgInput.files[0];if(!f)return;try{const data=await resizeImage(f);await dbSet('opt:'+id+':'+aid,data);touchItem(s);save(false);refreshOperationalIndicators();renderChecklist();toast('تم حفظ صورة هذا الخيار')}catch(e){toast('تعذر حفظ الصورة')}};
+      const altImgInput=card.querySelector('[data-alt-image-input]');if(altImgInput)altImgInput.onchange=async()=>{const f=altImgInput.files&&altImgInput.files[0];if(!f)return;try{const data=await resizeImage(f);await dbSet('opt:'+id+':'+aid,data);touchItem(s);save(false);refreshOperationalIndicators();renderChecklist();toast('تم حفظ صورة هذا الخيار')}catch(e){toast('تعذر حفظ الصورة')}};
     });
 
     const fi=el.querySelector('[data-image-input]');
@@ -491,7 +491,7 @@ if ('serviceWorker' in navigator) {
       if(next!=='need')applyItemStatus(s,next);
       touchItem(s);save(false);
       updateAll();closeAll();expandedItem=item.id;
-      catFilter=item.cat;$('catFilter').value=catFilter;
+      searchText='';$('search').value='';filter='all';priorityFilter='all';$('priorityFilter').value='all';filterChips();catFilter=item.cat;$('catFilter').value=catFilter;
       showPanel('checklistPanel');toast('تم حفظ المنتج بنجاح ✓');
       setTimeout(()=>document.querySelector('.item[data-id="'+CSS.escape(item.id)+'"]')?.scrollIntoView({behavior:'smooth',block:'center'}),150);
     }catch(err){toast('تعذر الحفظ، حاول مرة أخرى')}finally{saving=false;$('quickSaveBtn').disabled=false}
